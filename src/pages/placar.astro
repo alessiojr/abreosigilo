@@ -1,0 +1,201 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import deputies from '../data/deputies.json';
+
+const total = deputies.length;
+const favoraveis = deputies.filter(d => d.status === 'yes').length;
+const contrarios = deputies.filter(d => d.status === 'no').length;
+const indecisos = deputies.filter(d => d.status === 'undecided').length;
+const totalCasa = 513;
+const meta = 308;
+const percentual = Math.round((favoraveis / totalCasa) * 100);
+---
+
+<BaseLayout
+  title="Placar da Transparência — #AbraOSigilo"
+  description="Modelo de placar cívico para acompanhar respostas públicas sobre a proposta de transparência."
+  page="placar"
+>
+
+  <!-- HERO DO PLACAR -->
+  <section class="hero" style="background: linear-gradient(135deg, var(--preto) 0%, #1a1a2e 50%, var(--azul) 100%);">
+    <div class="container">
+       <span class="destaque" style="display: inline-block; margin-bottom: 16px;">📊 MODELO DEMONSTRATIVO</span>
+      <h1>Placar da<br>Transparência.</h1>
+      <p style="margin-top: 16px;">
+         Este é um modelo de como registrar respostas públicas à proposta,
+         com fonte, data e direito de correção antes de publicar nomes reais.
+      </p>
+    </div>
+  </section>
+
+  <!-- RESUMO DOS NÚMEROS -->
+  <section class="container" style="margin-top: -30px; position: relative; z-index: 2;">
+    <p style="background: #fff3cd; border: 1px solid #d4a800; border-radius: var(--radius); padding: 12px; margin-bottom: 16px; font-size: .9rem;">Os nomes e status abaixo são dados fictícios de interface. Não representam posicionamento de pessoas reais.</p>
+    <div class="grid-3" style="margin-bottom: 20px;">
+      <div style="background: #d4edda; border: 2px solid var(--verde); border-radius: var(--radius-grande); padding: 20px; text-align: center;">
+        <div style="font-size: 2.5rem; font-weight: 900; color: var(--verde); font-family: var(--font-titulos);">{favoraveis}</div>
+        <div style="font-weight: 700; text-transform: uppercase; font-size: 0.9rem;">🟢 Contas Abertas</div>
+      </div>
+      <div style="background: #fff3cd; border: 2px solid var(--amarelo); border-radius: var(--radius-grande); padding: 20px; text-align: center;">
+        <div style="font-size: 2.5rem; font-weight: 900; color: #856404; font-family: var(--font-titulos);">{indecisos}</div>
+        <div style="font-weight: 700; text-transform: uppercase; font-size: 0.9rem;">🟡 Indecisos</div>
+      </div>
+      <div style="background: #f8d7da; border: 2px solid var(--vermelho-alerta); border-radius: var(--radius-grande); padding: 20px; text-align: center;">
+        <div style="font-size: 2.5rem; font-weight: 900; color: var(--vermelho-alerta); font-family: var(--font-titulos);">{contrarios}</div>
+        <div style="font-weight: 700; text-transform: uppercase; font-size: 0.9rem;">🔴 Se Recusaram</div>
+      </div>
+    </div>
+
+    <!-- BARRA DE PROGRESSO -->
+    <div style="background: var(--branco); border-radius: var(--radius-grande); padding: 24px; box-shadow: var(--sombra); margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px;">
+        <h3 style="margin: 0;">Exemplo de acompanhamento da PEC</h3>
+        <div style="text-align: right;">
+          <span style="font-size: 1.8rem; font-weight: 900; color: var(--verde); font-family: var(--font-titulos);">{favoraveis} / {meta}</span>
+          <span style="display: block; font-size: 0.8rem; color: var(--cinza-medio);">votos necessários na Câmara</span>
+        </div>
+      </div>
+
+      <div class="barra-progresso" style="margin-top: 16px;">
+        <div class="preenchimento" style={`width: ${percentual}%`}></div>
+        <div class="meta-marcador" style={`left: ${Math.round((meta / totalCasa) * 100)}%`} title="Meta: 308 votos (3/5)"></div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--cinza-medio); margin-top: 4px;">
+        <span>Apoios: {favoraveis}</span>
+        <span style="color: var(--vermelho-alerta);">Meta: {meta} (3/5)</span>
+        <span>Total: {totalCasa}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABELA DE DEPUTADOS -->
+  <section class="container" style="margin-bottom: 40px;">
+      <h2 style="margin-bottom: 16px;">Exemplo de Placar</h2>
+
+    <div class="filtros" id="filtros-placar">
+      <select id="filtro-uf">
+        <option value="ALL">Todos os Estados</option>
+        <option value="SP">São Paulo (SP)</option>
+        <option value="RJ">Rio de Janeiro (RJ)</option>
+        <option value="MG">Minas Gerais (MG)</option>
+        <option value="BA">Bahia (BA)</option>
+        <option value="RS">Rio Grande do Sul (RS)</option>
+        <option value="PR">Paraná (PR)</option>
+        <option value="PE">Pernambuco (PE)</option>
+        <option value="CE">Ceará (CE)</option>
+        <option value="GO">Goiás (GO)</option>
+        <option value="SC">Santa Catarina (SC)</option>
+        <option value="PA">Pará (PA)</option>
+        <option value="DF">Distrito Federal (DF)</option>
+      </select>
+
+      <select id="filtro-status">
+        <option value="ALL">Todos</option>
+        <option value="yes">🟢 Abertos</option>
+        <option value="undecided">🟡 Indecisos</option>
+        <option value="no">🔴 Se Recusaram</option>
+      </select>
+
+      <input type="text" id="filtro-nome" placeholder="Buscar por nome ou partido..." style="flex: 1; min-width: 200px;">
+    </div>
+
+    <div style="overflow-x: auto;">
+      <table class="tabela" id="tabela-deputados">
+        <thead>
+          <tr>
+            <th>Parlamentar</th>
+            <th>Partido</th>
+            <th>UF</th>
+            <th>Status</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          {deputies.map(dep => (
+            <tr data-uf={dep.state} data-status={dep.status}>
+              <td><strong>{dep.name}</strong></td>
+              <td style="color: var(--azul); font-weight: 700;">{dep.party}</td>
+              <td style="color: var(--cinza-medio);">{dep.state}</td>
+              <td>
+                {dep.status === 'yes' && <span class="tag tag-sim">Contas Abertas</span>}
+                {dep.status === 'undecided' && <span class="tag tag-indeciso">Indeciso</span>}
+                {dep.status === 'no' && <span class="tag tag-nao">Se Recusou</span>}
+              </td>
+              <td>
+                {dep.status !== 'yes' && (
+                  <a href={`https://wa.me/${dep.phone}?text=${encodeURIComponent(`Prezado(a) ${dep.name}, como eleitor(a), exijo seu apoio à PEC da Transparência Patrimonial. Quem pede voto tem obrigação de mostrar as contas. #AbraOSigilo`)}`} target="_blank" rel="noopener" class="btn btn-vermelho" style="font-size: 0.75rem; padding: 6px 12px;">
+                    📱 Pressionar
+                  </a>
+                )}
+                {dep.status === 'yes' && (
+                  <span style="color: var(--verde); font-weight: 700; font-size: 0.85rem;">✅ Transparente</span>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- O QUE SIGNIFICA CADA COR -->
+  <section class="secao-escura">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 8px; color: var(--amarelo);">Entenda o Semáforo</h2>
+      <p style="text-align: center; color: #ccc; margin-bottom: 24px;">Como classificamos cada político.</p>
+
+      <div class="grid-3">
+        <div style="background: rgba(255,255,255,0.1); border-radius: var(--radius-grande); padding: 24px; border: 2px solid var(--verde);">
+          <h3 style="color: var(--verde); font-size: 1.2rem;">🟢 Contas Abertas</h3>
+           <p style="font-size: 0.9rem; color: #ccc;">Entregou documentação definida pela metodologia e teve a informação verificada. O selo deve informar exatamente o que foi comprovado.</p>
+           <p style="font-size: 0.85rem; color: var(--verde); font-weight: 700; margin-top: 8px;">Consulte a fonte antes de decidir seu voto.</p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.1); border-radius: var(--radius-grande); padding: 24px; border: 2px solid var(--amarelo);">
+          <h3 style="color: var(--amarelo); font-size: 1.2rem;">🟡 Indeciso</h3>
+           <p style="font-size: 0.9rem; color: #ccc;">Ainda não há resposta pública registrada ou a resposta está em verificação. Ausência de resposta não é prova de irregularidade.</p>
+           <p style="font-size: 0.85rem; color: var(--amarelo); font-weight: 700; margin-top: 8px;">Envie uma pergunta respeitosa e peça uma posição pública.</p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.1); border-radius: var(--radius-grande); padding: 24px; border: 2px solid var(--vermelho-alerta);">
+          <h3 style="color: var(--vermelho-alerta); font-size: 1.2rem;">🔴 Se Recusou</h3>
+           <p style="font-size: 0.9rem; color: #ccc;">Manifestou posição contrária à proposta, com fonte pública e data. A página deve reproduzir sua justificativa e oferecer canal de correção.</p>
+           <p style="font-size: 0.85rem; color: var(--vermelho-alerta); font-weight: 700; margin-top: 8px;">Discordar da proposta não é prova de irregularidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filtroUf = document.getElementById('filtro-uf') as HTMLSelectElement | null;
+    const filtroStatus = document.getElementById('filtro-status') as HTMLSelectElement | null;
+    const filtroNome = document.getElementById('filtro-nome') as HTMLInputElement | null;
+
+    function filtrarTabela() {
+      const uf = filtroUf?.value || 'ALL';
+      const status = filtroStatus?.value || 'ALL';
+      const nome = (filtroNome?.value || '').toLowerCase();
+
+      document.querySelectorAll('#tabela-deputados tbody tr').forEach(row => {
+        const rowUf = row.getAttribute('data-uf') || '';
+        const rowStatus = row.getAttribute('data-status') || '';
+        const rowNome = row.textContent?.toLowerCase() || '';
+
+        const matchUf = uf === 'ALL' || rowUf === uf;
+        const matchStatus = status === 'ALL' || rowStatus === status;
+        const matchNome = nome === '' || rowNome.includes(nome);
+
+        (row as HTMLElement).style.display = (matchUf && matchStatus && matchNome) ? '' : 'none';
+      });
+    }
+
+    filtroUf?.addEventListener('change', filtrarTabela);
+    filtroStatus?.addEventListener('change', filtrarTabela);
+    filtroNome?.addEventListener('input', filtrarTabela);
+  });
+</script>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGILO ZERO | Transparência e Integridade Patrimonial na Política</title>
+  <meta name="description" content="Plataforma Cívica e Jurídica pela Transparência Patrimonial e Fiscal Plena de ocupantes de mandatos eletivos e candidatos a cargos públicos no Brasil.">
+  <meta name="keywords" content="transparência política, sigilo fiscal, PEC transparência, combate à corrupção, integridade pública, Receita Federal, CGU">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#" class="brand-logo" id="header-brand-logo">
+        <div class="logo-icon">§</div>
+        <div class="brand-title">
+          <span>SIGILO ZERO</span>
+          <span class="brand-sub">Transparência Patrimonial Política</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <button class="nav-btn active" data-target="view-president" id="nav-btn-pres">🏛️ Presidente</button>
+        <button class="nav-btn" data-target="view-deputy" id="nav-btn-dep">⚖️ Deputado</button>
+        <button class="nav-btn" data-target="view-plan" id="nav-btn-plan">🗺️ Plano em Etapas</button>
+        <button class="nav-btn" data-target="view-scoreboard" id="nav-btn-score">📊 Placar da PEC</button>
+        <button class="nav-btn" data-target="view-pressure" id="nav-btn-press">📢 Pressione Já</button>
+        <span class="badge-live">Iniciativa 2026</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="container">
+    <section class="hero-section">
+      <div class="hero-pill">
+        <span>⚡ Reforma Estrutural Republicana</span>
+        <span>•</span>
+        <span>Executivo & Legislativo em Ação</span>
+      </div>
+      
+      <h1 class="hero-title">
+        Fim do Sigilo Opaco:<br>
+        <span class="hero-gradient-text">Contas Abertas para Quem Pede o Voto do Povo</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        O cidadão comum tem cada centavo auditado pela Receita Federal. Chegou a hora de exigir o mesmo padrão ético de quem governa e legisla. Conheça a estratégia que articula o <strong>Decreto do Presidente</strong> com a <strong>PEC e o PLP na Câmara dos Deputados</strong>.
+      </p>
+
+      <div class="hero-cta-bar">
+        <button class="btn-primary" onclick="document.querySelector('.perspective-btn[data-target=\'view-president\']').click();">
+          <span>Ver Ação do Presidente (Decreto)</span> →
+        </button>
+        <button class="btn-secondary" onclick="document.querySelector('.perspective-btn[data-target=\'view-deputy\']').click();">
+          <span>Ver Ação do Deputado (PEC & PLP)</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Perspective Selector Navigation -->
+    <section class="perspective-selector-wrap">
+      <div class="perspective-bar">
+        <button class="perspective-btn active" data-target="view-president" id="btn-persp-pres">
+          🏛️ Atuação: Presidente da República
+        </button>
+        <button class="perspective-btn" data-target="view-deputy" id="btn-persp-dep">
+          ⚖️ Atuação: Deputado Federal
+        </button>
+        <button class="perspective-btn" data-target="view-plan" id="btn-persp-plan">
+          🗺️ Plano de Trabalho em Etapas
+        </button>
+        <button class="perspective-btn" data-target="view-scoreboard" id="btn-persp-score">
+          📊 Placar da PEC no Congresso
+        </button>
+        <button class="perspective-btn" data-target="view-pressure" id="btn-persp-press">
+          📢 Canal de Pressão Cidadã
+        </button>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 1: PRESIDENTE DA REPÚBLICA ==================== -->
+    <div id="view-president" class="view-panel active">
+      <div class="grid-2">
+        
+        <!-- Card 1: Pronunciamento à Nação -->
+        <article class="glass-card">
+          <div class="card-header-flex">
+            <div class="card-title-group">
+              <span class="card-tag tag-executive">Comunicação de Estado</span>
+              <h3>Pronunciamento em Rede Nacional</h3>
+            </div>
+            <button class="btn-copy" data-copy-target="presidential-speech-text">Copiar Discurso</button>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">
+            Texto de pronunciamento em cadeia nacional de rádio e TV: fala com tom estadista, republicano e de liderança pelo exemplo.
+          </p>
+          <div class="speech-box" id="presidential-speech-text">
+            <p><strong>"Boa noite a todas as brasileiras e a todos os brasileiros.</strong></p>
+            <p>Falo a vocês esta noite sobre uma questão que toca o coração da nossa República: a confiança entre quem vota e quem é votado.</p>
+            <p>Quantas vezes você, trabalhador e trabalhadora deste país, já olhou para a política com a sensação de desilusão? A sensação de que quem entra na vida pública enriquece da noite para o dia, enquanto quem acorda de madrugada para pagar as contas vê o salário ser consumido mês a mês?</p>
+            <p>O Brasil não pode mais conviver com essa dúvida. A política só se faz respeitar quando não esconde nada daqueles a quem deve prestar contas.</p>
+            <p>Hoje, assinei um Decreto Presidencial que muda as regras do jogo no Governo Federal. A partir de agora, ninguém será ministro, presidente de estatal ou diretor no meu governo se não assinar um termo autorizando a Controladoria-Geral da União e a Receita Federal a auditarem dia e noite o seu patrimônio e as suas contas.</p>
+            <p>Eu próprio fui o primeiro a assinar e a entregar minhas contas à auditoria contínua. Porque a autoridade de um líder não vem do cargo que ocupa, mas do exemplo que dá. Quem não deve, não teme a verdade.</p>
+            <p>E, para que essa regra valha para todo o país, estou enviando agora ao Congresso Nacional a PEC da Transparência Patrimonial Plena. Acompanhem seus representantes. A política pertence ao povo brasileiro!"</p>
+          </div>
+        </article>
+
+        <!-- Card 2: Minuta do Decreto Presidencial -->
+        <article class="glass-card">
+          <div class="card-header-flex">
+            <div class="card-title-group">
+              <span class="card-tag tag-executive">Ato Infralegal</span>
+              <h3>Decreto do Executivo Federal</h3>
+            </div>
+            <button class="btn-copy" data-copy-target="presidential-decree-text">Copiar Minuta</button>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">
+            Fundamentado no Art. 84, IV e VI da CF/88. Cria o <em>Programa Federal de Transparência e Integridade Patrimonial Ativa</em>.
+          </p>
+          <div class="legal-code-block" id="presidential-decree-text">
+DECRETO Nº ..., DE ... DE 2026
+Institui o Programa Federal de Transparência e Integridade Patrimonial Ativa no âmbito do Poder Executivo Federal.
+
+Art. 1º Fica instituído o Programa com o objetivo de prevenir enriquecimento ilícito e conflitos de interesse.
+
+Art. 2º A nomeação para Ministro de Estado, Presidente de Estatais, Agências Reguladoras e CCE 15 a 18 fica condicionada à subscrição prévia de Termo de Consentimento para Auditoria Fiscal Contínua.
+
+Art. 3º Mediante o Termo, o agente autoriza:
+I - Compartilhamento contínuo entre Receita Federal e CGU das declarações de IRPF dos últimos 5 anos;
+II - Monitoramento automatizado de variação patrimonial incompatível com a renda;
+III - Exigência de esclarecimentos sob pena de imediata exoneração por quebra de confiança.
+          </div>
+          <div style="margin-top: 16px; font-size: 0.85rem; color: #60a5fa;">
+            ✓ Totalmente dentro dos limites constitucionais do Executivo (não invade as atribuições do Congresso nem dos Estados).
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Card 3: Mensagem Presidencial ao Congresso -->
+      <article class="glass-card" style="margin-bottom: 32px;">
+        <div class="card-header-flex">
+          <div class="card-title-group">
+            <span class="card-tag tag-executive">Articulação Institucional</span>
+            <h3>Mensagem Presidencial ao Congresso Nacional (Art. 60, II da CF)</h3>
+          </div>
+          <button class="btn-copy" data-copy-target="presidential-message-text">Copiar Mensagem</button>
+        </div>
+        <div class="legal-code-block" id="presidential-message-text">
+MENSAGEM Nº ..., DE 2026
+Senhor Presidente do Congresso Nacional,
+
+Comunico a Vossa Excelência que, nos termos do art. 60, inciso II, e do art. 84, inciso XXVII da Constituição Federal, encaminho ao Congresso Nacional o texto da PROPOSTA DE EMENDA À CONSTITUIÇÃO que altera os arts. 14 e 37 da Carta Magna para instituir a transparência e conformidade patrimonial ativa para candidatos e titulares de mandatos eletivos em todas as esferas federativas.
+
+Encaminho, concomitantemente, o Projeto de Lei Complementar alterando a LC nº 64/90 (Lei das Inelegibilidades).
+
+Ao dar o exemplo inicial na esfera do Poder Executivo Federal por meio de Decreto, solicito a esse nobre Parlamento a tramitação célere e prioritária desta matéria essencial para a restauração da confiança republicana.
+        </div>
+      </article>
+    </div>
+
+    <!-- ==================== VIEW 2: DEPUTADO FEDERAL ==================== -->
+    <div id="view-deputy" class="view-panel">
+      <div class="grid-2">
+        
+        <!-- Card 1: Discurso na Tribuna da Câmara -->
+        <article class="glass-card">
+          <div class="card-header-flex">
+            <div class="card-title-group">
+              <span class="card-tag tag-legislative">Oratória Parlamentar</span>
+              <h3>Discurso na Tribuna da Câmara dos Deputados</h3>
+            </div>
+            <button class="btn-copy" data-copy-target="deputy-speech-text">Copiar Discurso</button>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">
+            Pronunciamento combativo, desmontando os argumentos corporativistas de "invasão de privacidade".
+          </p>
+          <div class="speech-box" id="deputy-speech-text">
+            <p><strong>"Senhor Presidente, Senhoras Deputadas, Senhores Deputados, povo brasileiro:</strong></p>
+            <p>Subo a esta Tribuna sagrada diante de uma encruzilhada moral histórica. A sociedade brasileira não aceita mais que o trabalhador comum caia na malha fina por 50 reais, enquanto políticos enriquecem misteriosamente escondidos sob a proteção do sigilo bancário!</p>
+            <p>O Presidente da República assinou o Decreto no Executivo e abriu as contas da sua própria equipe. O Governo Federal deu o exemplo. Agora a responsabilidade é nossa!</p>
+            <p>Protocolamos hoje a PEC da Transparência Patrimonial Plena e o Projeto de Lei Complementar que torna inelegível por oito anos quem esconder patrimônio da Justiça Eleitoral.</p>
+            <p>E já escuto nos corredores: <em>'Ah, nobre deputado, isso é invasão de intimidade'</em>. Ora, que desfaçatez! Ninguém é obrigado a ser candidato. Quem pede o voto popular aceita ser fiscalizado pelo dono do poder, que é o povo brasileiro!</p>
+            <p>Quem não rouba, quem não recebe propina, não teme a verdade! Não permitiremos que esta proposta seja engavetada. O Brasil estará vigilante nesta Casa!"</p>
+          </div>
+        </article>
+
+        <!-- Card 2: Texto da Proposta de Emenda à Constituição (PEC) -->
+        <article class="glass-card">
+          <div class="card-header-flex">
+            <div class="card-title-group">
+              <span class="card-tag tag-legislative">Texto Constitucional</span>
+              <h3>PEC da Transparência Patrimonial Plena</h3>
+            </div>
+            <button class="btn-copy" data-copy-target="pec-code-text">Copiar PEC</button>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">
+            Altera os artigos 14 e 37 da CF/88, introduzindo a Certidão de Conformidade e o regime de transparência ativa.
+          </p>
+          <div class="legal-code-block" id="pec-code-text">
+PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº ..., DE 2026
+
+Art. 1º O art. 14 da CF passa a vigorar acrescido:
+«§ 14. O registro de candidatura para qualquer cargo político-eletivo é condicionado à apresentação de Certidão de Conformidade Patrimonial Ativa, emitida por órgão fazendário, e termo irrevogável de consentimento para auditoria fiscal contínua dos últimos 5 exercícios anteriores ao pleito.
+§ 15. A omissão deliberada ou evolução patrimonial manifestamente incompatível importará o indeferimento do registro ou a perda do mandato pela Justiça Eleitoral.»
+
+Art. 2º O art. 37 da CF passa a vigorar acrescido:
+«§ 17. Os titulares de mandato eletivo ficam submetidos a regime especial de transparência patrimonial ativa, autorizando o cruzamento automatizado de dados fiscais e bancários até 2 anos após o término do mandato.
+§ 18. As certidões anuais de evolução patrimonial serão de acesso público irrestrito.»
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Card 3: PLP da Inelegibilidade e Batalha Regimental -->
+      <article class="glass-card" style="margin-bottom: 32px;">
+        <div class="card-header-flex">
+          <div class="card-title-group">
+            <span class="card-tag tag-legislative">Legislação Complementar</span>
+            <h3>PLP das Inelegibilidades (Alteração na LC 64/90 & Lei 9.504/97)</h3>
+          </div>
+          <button class="btn-copy" data-copy-target="plp-code-text">Copiar PLP</button>
+        </div>
+        <div class="legal-code-block" id="plp-code-text">
+PROJETO DE LEI COMPLEMENTAR Nº ..., DE 2026
+
+Art. 1º O art. 1º, inciso I da LC nº 64/1990 passa a vigorar acrescido da alínea "s":
+«s) os que tiverem o registro indeferido ou o mandato cassado por omissão, simulação ou ocultação de bens, ou não comprovação de evolução patrimonial lícita, para as eleições nos 8 anos subsequentes.»
+
+Art. 2º O art. 11 da Lei nº 9.504/1997 passa a vigorar com a exigência de:
+- Certidão da Receita Federal dos últimos 5 anos;
+- Rastreamento obrigatório de transferências, empréstimos ou transações atípicas com parentes até 2º grau (vedação a "laranjas").
+        </div>
+      </article>
+    </div>
+
+    <!-- ==================== VIEW 3: PLANO DE TRABALHO EM ETAPAS ==================== -->
+    <div id="view-plan" class="view-panel">
+      <div class="glass-card" style="margin-bottom: 32px;">
+        <div class="card-header-flex">
+          <div>
+            <h2 style="font-size: 1.4rem; color: #fff;">Plano Estratégico de Trabalho: Da Caneta à Lei</h2>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              Cronograma operacional coordenado entre o Poder Executivo, o Congresso Nacional e a Mobilização Social.
+            </p>
+          </div>
+          <span class="badge-live">6 Fases de Execução</span>
+        </div>
+
+        <div class="timeline-stepper">
+          
+          <div class="timeline-step">
+            <div class="step-marker done"></div>
+            <div class="step-card">
+              <div class="step-title">
+                <span>Fase 1: Formulação Técnica e Decreto pelo Exemplo (Mês 1)</span>
+                <span class="status-badge status-yes">Executivo Ativo</span>
+              </div>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">
+                Elaboração da minuta interministerial (Casa Civil, CGU, Receita e Justiça), assinatura do Decreto Presidencial impondo a auditoria contínua a ministros e diretores de estatais, e Pronunciamento Nacional do Presidente da República.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-marker done"></div>
+            <div class="step-card">
+              <div class="step-title">
+                <span>Fase 2: Mensagem Presidencial & Frente Parlamentar (Mês 2)</span>
+                <span class="status-badge status-yes">Protocolo Formal</span>
+              </div>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">
+                Envio da Mensagem do Presidente ao Congresso. Coleta de 171 assinaturas de deputados pela Frente Parlamentar para blindagem de autoria conjunta. Discurso inaugural na Tribuna da Câmara dos Deputados.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-marker"></div>
+            <div class="step-card">
+              <div class="step-title">
+                <span>Fase 3: Batalha Regimental na CCJC e Comissão Especial (Meses 3 a 6)</span>
+                <span class="status-badge status-undecided">Tramitação</span>
+              </div>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">
+                Derrota das teses de inadmissibilidade constitucional na CCJ com base na jurisprudência do STF. Realização de 5 audiências públicas de peso (Receita Federal, TCU, CGU, OAB e Transparência Internacional).
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-marker"></div>
+            <div class="step-card">
+              <div class="step-title">
+                <span>Fase 4: Ativação da Plataforma Cívica e Pressão Social (Meses 4 a 7)</span>
+                <span class="status-badge status-undecided">Engajamento</span>
+              </div>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">
+                Lançamento do Placar Interativo dos Deputados, módulo "Assine Antes da Lei" para políticos transparentes e campanhas coordenadas de WhatsApp contra parlamentares indecisos ou contrários.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-marker"></div>
+            <div class="step-card">
+              <div class="step-title">
+                <span>Fase 5: Votação no Plenário e Promulgação (Meses 7 a 10)</span>
+                <span class="status-badge status-undecided">Quórum Qualificado</span>
+              </div>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">
+                Aprovação em 2 turnos na Câmara (308 votos necessários) e em 2 turnos no Senado Federal (49 votos necessários). Sessão solene de promulgação da Emenda Constitucional e sanção presidencial do PLP.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-marker"></div>
+            <div class="step-card">
+              <div class="step-title">
+                <span>Fase 6: Integração Tecnológica e Auditoria Automatizada (Mês 11 em diante)</span>
+                <span class="status-badge status-undecided">Operação Contínua</span>
+              </div>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">
+                Interconexão sistêmica Receita Federal + TSE + CGU + COAF com verificação algorítmica de evolução patrimonial incompatível antes de cada homologação de registro eleitoral.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== VIEW 4: PLACAR DA PEC ==================== -->
+    <div id="view-scoreboard" class="view-panel">
+      <div class="scoreboard-header">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <h2 style="font-size: 1.5rem; color: #fff;">Placar da PEC da Transparência Patrimonial</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+              Acompanhamento ao vivo do quórum constitucional na Câmara dos Deputados.
+            </p>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 1.6rem; font-weight: 800; color: #10b981;">298 / 308</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Votos confirmados para aprovação</div>
+          </div>
+        </div>
+
+        <div class="progress-track-wrap">
+          <div class="progress-labels">
+            <span>Apoios confirmados: 298</span>
+            <span style="color: #fbbf24;">Meta Constitucional: 308 votos (3/5)</span>
+            <span>Total da Casa: 513</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" style="width: 58.08%;"></div>
+            <div class="target-marker" title="Meta de 308 votos"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filtros da Tabela -->
+      <div class="scoreboard-filters">
+        <select id="filter-state" class="filter-select">
+          <option value="ALL">Todos os Estados (UF)</option>
+          <option value="SP">São Paulo (SP)</option>
+          <option value="RJ">Rio de Janeiro (RJ)</option>
+          <option value="MG">Minas Gerais (MG)</option>
+          <option value="BA">Bahia (BA)</option>
+          <option value="RS">Rio Grande do Sul (RS)</option>
+          <option value="PR">Paraná (PR)</option>
+          <option value="PE">Pernambuco (PE)</option>
+          <option value="CE">Ceará (CE)</option>
+          <option value="GO">Goiás (GO)</option>
+          <option value="SC">Santa Catarina (SC)</option>
+          <option value="PA">Pará (PA)</option>
+          <option value="DF">Distrito Federal (DF)</option>
+        </select>
+
+        <select id="filter-status" class="filter-select">
+          <option value="ALL">Todos os Posicionamentos</option>
+          <option value="yes">Favoráveis (Signatários)</option>
+          <option value="undecided">Indecisos / Sem Resposta</option>
+          <option value="no">Contrários à PEC</option>
+        </select>
+
+        <input type="text" id="filter-search" class="filter-input" placeholder="Buscar por nome ou partido...">
+      </div>
+
+      <div class="glass-card" style="padding: 0; overflow-x: auto;">
+        <table class="deputies-table">
+          <thead>
+            <tr>
+              <th>Parlamentar</th>
+              <th>Partido</th>
+              <th>UF</th>
+              <th>Posição Declarada</th>
+              <th>Ação Cívica</th>
+            </tr>
+          </thead>
+          <tbody id="deputies-table-body">
+            <!-- Populado dinamicamente via script.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ==================== VIEW 5: PRESSÃO CIDADÃ ==================== -->
+    <div id="view-pressure" class="view-panel">
+      <div class="glass-card">
+        <div class="card-header-flex">
+          <div>
+            <h2 style="font-size: 1.4rem; color: #fff;">Canal de Pressão Cívica Direta</h2>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              Envie uma cobrança formal e imediata para os parlamentares do seu Estado via WhatsApp ou E-mail.
+            </p>
+          </div>
+          <span class="card-tag tag-citizen">Poder do Voto</span>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <label for="select-deputy-pressure" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem;">
+            Selecione o Parlamentar que deseja pressionar:
+          </label>
+          <select id="select-deputy-pressure" class="filter-select" style="width: 100%; max-width: 480px;">
+            <!-- Opções populadas via JS -->
+          </select>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <label for="pressure-message-preview" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem;">
+            Mensagem Cívica Padronizada (Personalizável):
+          </label>
+          <textarea id="pressure-message-preview" class="legal-code-block" style="width: 100%; min-height: 140px; resize: vertical;"></textarea>
+        </div>
+
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="#" id="btn-send-whatsapp" target="_blank" class="btn-primary" style="background: linear-gradient(135deg, #059669, #10b981);">
+            <span>Disparar no WhatsApp</span> 📱
+          </a>
+          <button class="btn-copy" data-copy-target="pressure-message-preview" style="padding: 12px 20px; font-size: 0.9rem;">
+            Copiar Texto da Mensagem
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p style="font-weight: 700; color: #fff; margin-bottom: 8px;">SIGILO ZERO — Projeto Cívico-Institucional de Integridade Pública</p>
+      <p>Desenvolvido para articular a liderança do Poder Executivo com o protagonismo representativo do Poder Legislativo.</p>
+      <p style="margin-top: 12px; font-size: 0.78rem;">Documentos técnicos baseados na Constituição Federal de 1988, LC nº 64/90, Lei nº 9.504/97 e jurisprudência consolidada do STF.</p>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

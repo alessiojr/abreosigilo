@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Transparência cidadã</title><desc id="desc">Uma pessoa ilumina um prédio público com uma lanterna.</desc>
+  <rect width="640" height="480" rx="28" fill="#002776"/>
+  <path d="M0 410 170 335l170 75 150-125 150 125v70H0z" fill="#001b53"/>
+  <circle cx="472" cy="104" r="62" fill="#ffdf00" opacity=".95"/>
+  <path d="M414 105h116M472 47v116M430 63l84 84M514 63l-84 84" stroke="#fff" stroke-width="7" opacity=".38"/>
+  <path d="M222 175h196l32 44H190z" fill="#fff"/>
+  <path d="M205 219h210v145H205z" fill="#f3f5f7"/>
+  <path d="M231 240h28v96h-28zm50 0h28v96h-28zm50 0h28v96h-28zm50 0h28v96h-28z" fill="#009c3b"/>
+  <path d="M177 364h265v19H177z" fill="#ffdf00"/>
+  <circle cx="123" cy="310" r="27" fill="#f5c6a5"/><path d="M87 376c4-45 70-45 74 0z" fill="#e63946"/>
+  <path d="m144 301 96-63 15 26-96 63z" fill="#ffdf00"/>
+  <path d="m235 224 72-46 32 53-84 29z" fill="#fff" opacity=".9"/>
+  <circle cx="121" cy="289" r="30" fill="#1a1a1a"/><path d="M94 297c5-32 49-43 57-4-11-9-38-11-57 4z" fill="#39251e"/>
+  <text x="320" y="438" fill="#fff" font-family="Arial,sans-serif" font-size="24" font-weight="700" text-anchor="middle">TRANSPARÊNCIA É LUZ PÚBLICA</text>
+</svg>

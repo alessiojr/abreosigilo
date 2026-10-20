@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroComparison from '../components/HeroComparison.astro';
+import ShareBlock from '../components/ShareBlock.astro';
+import QuoteCard from '../components/QuoteCard.astro';
+---
+
+<BaseLayout
+  title="Você não precisa escolher um lado — #AbraOSigilo"
+  description="Não é esquerda nem direita: é uma proposta de compromisso público, fiscalização e proteção de dados."
+  page="centrao"
+>
+
+  <!-- HERO -->
+  <section class="hero" style="background: linear-gradient(135deg, var(--azul) 0%, #1a3a6b 50%, #2d5a2d 100%);">
+    <div class="container">
+      <span class="destaque" style="display: inline-block; margin-bottom: 16px;">NEM ESQUERDA, NEM DIREITA. MATEMÁTICA.</span>
+      <h1>Você não precisa<br>escolher um lado.</h1>
+      <p style="margin-top: 16px;">
+        Tem político que você gosta. Tem político que você não gosta. Isso não importa.
+        O que importa é uma pergunta simples que serve para todos eles:
+      </p>
+      <p style="margin-top: 8px; font-weight: 700; font-size: 1.3rem;">
+         <strong style="color: var(--amarelo);">"Você apoia uma transparência patrimonial verificável?"</strong>
+      </p>
+      <div style="margin-top: 28px;">
+        <a href="/compartilhe" class="btn btn-amarelo btn-lg">🤔 ENTENDA O MOVIMENTO</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARAÇÃO -->
+  <HeroComparison
+    titulo="Não tem ideologia nessa conta."
+       subtitulo="O eleitor precisa de informação compreensível e os órgãos de controle precisam de regras e limites claros."
+    chamadaCidadao="VOCÊ (qualquer partido)"
+    chamadaPolitico="POLÍTICO (qualquer partido)"
+  />
+
+  <!-- A MATEMÁTICA SIMPLES -->
+  <section class="secao-escura">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 24px; color: var(--amarelo);">Vamos fazer uma conta simples.</h2>
+
+      <div class="grid-2">
+        <div style="background: var(--branco); border-radius: var(--radius-grande); padding: 28px;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 16px;">🧮 O que um deputado federal ganha:</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li style="padding: 8px 0; border-bottom: 1px solid #eee;">Salário bruto: <strong>R$ 39.293,00/mês</strong></li>
+            <li style="padding: 8px 0; border-bottom: 1px solid #eee;">Auxílio-moradia: <strong>R$ 4.253,00/mês</strong></li>
+            <li style="padding: 8px 0; border-bottom: 1px solid #eee;">Verba de gabinete: <strong>Até R$ 111.675,00/mês</strong></li>
+            <li style="padding: 8px 0; border-bottom: 1px solid #eee;">Cota parlamentar: <strong>R$ 30.000 a R$ 45.000/mês</strong></li>
+            <li style="padding: 8px 0; border-bottom: 1px solid #eee;">Auxílio-saúde: <strong>Reembolso ilimitado</strong></li>
+            <li style="padding: 8px 0;">Total 4 anos: <strong>Aprox. R$ 11 milhões</strong></li>
+          </ul>
+        </div>
+
+        <div style="background: var(--branco); border-radius: var(--radius-grande); padding: 28px;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 16px;">❓ Perguntas que qualquer eleitor pode fazer:</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: var(--vermelho-alerta); font-weight: 600;">Se ele entrou no mandato com 1 apartamento e saiu com 5, de onde veio o dinheiro?</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: var(--vermelho-alerta); font-weight: 600;">Se o patrimônio cresceu 300% em 4 anos, o salário explica?</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: var(--vermelho-alerta); font-weight: 600;">Por que ele declara bens ao TSE por "custo histórico" em vez de valor real?</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: var(--vermelho-alerta); font-weight: 600;">Se a empresa dele ganhou licitação do governo, isso é conflito de interesse?</li>
+             <li style="padding: 8px 0; color: var(--vermelho-alerta); font-weight: 600;">Que compromisso público de transparência e controle ele aceita assumir?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESCLARECIMENTO -->
+  <section class="secao">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 24px;">Mas e a privacidade dele?</h2>
+
+      <div class="grid-2">
+        <div class="card-info" style="border-top: 6px solid var(--vermelho-alerta);">
+          <h3>❌ O argumento furado</h3>
+          <p style="font-size: 1rem;">"Ah, mas isso é invasão de privacidade, é perseguição política..."</p>
+          <p style="font-weight: 700; margin-top: 12px;">
+            Ninguém é obrigado a ser candidato. Candidatura é um ato VOLUNTÁRIO.
+            Se a pessoa quer gerir o dinheiro público, ela tem que estar disposta a mostrar o próprio dinheiro.
+          </p>
+          <p style="color: var(--cinza-medio);">Você, quando abre uma conta no banco ou financia um carro, também dão acesso a quase toda sua vida financeira. E você NÃO está lidando com dinheiro público.</p>
+        </div>
+
+        <div class="card-info" style="border-top: 6px solid var(--verde);">
+          <h3>✅ O simples bom senso</h3>
+          <p style="font-weight: 700;">
+            A Constituição impede o GOVERNO de forçar o político a abrir as contas.
+            Mas não impede o político de ESCOLHER mostrar voluntariamente.
+          </p>
+          <p style="margin-top: 12px;">
+            É exatamente isso que o movimento #AbraOSigilo propõe: que o político, por vontade própria,
+            assine um termo autorizando a Receita a auditar suas contas. Quem não deve, assina em 5 minutos.
+          </p>
+           <p style="color: var(--cinza-medio);">Uma recusa ou silêncio deve ser registrado com fonte e não é, por si, prova de irregularidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background: var(--verde); color: var(--branco); padding: 50px 0; text-align: center;">
+    <div class="container">
+      <h2 style="color: var(--branco); margin-bottom: 12px;">A matemática fecha. A sua decisão é a próxima.</h2>
+      <p style="font-size: 1.15rem; margin-bottom: 24px; opacity: 0.95;">
+         Conheça a metodologia e acompanhe respostas públicas verificadas.
+      </p>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="/placar" class="btn btn-amarelo btn-lg">📊 PLACAR DA TRANSPARÊNCIA</a>
+        <a href="/compartilhe" class="btn btn-branco btn-lg">📢 COMPARTILHE</a>
+      </div>
+    </div>
+  </section>
+
+  <ShareBlock
+     texto="Não é esquerda nem direita: é compromisso público, fiscalização e proteção de dados. #AbraOSigilo"
+    urlDaPagina="https://abrasigilo.com.br/centrao"
+    mostrarCorrente={true}
+  />
+
+</BaseLayout>

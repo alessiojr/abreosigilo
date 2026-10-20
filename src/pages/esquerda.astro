@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroComparison from '../components/HeroComparison.astro';
+import ShareBlock from '../components/ShareBlock.astro';
+import QuoteCard from '../components/QuoteCard.astro';
+---
+
+<BaseLayout
+  title="Transparência também é justiça social — #AbraOSigilo"
+  description="Regras claras e controle independente ajudam a proteger recursos que fazem falta em serviços públicos."
+  page="esquerda"
+>
+
+  <!-- HERO -->
+  <section class="hero" style="background: linear-gradient(135deg, #b71c1c 0%, #880e4f 50%, var(--azul) 100%);">
+    <div class="container">
+      <span class="destaque" style="background: #fff; color: #b71c1c; display: inline-block; margin-bottom: 16px;">PARA QUEM LUTA POR JUSTIÇA SOCIAL</span>
+      <h1>Transparência<br>é luta de classe.</h1>
+      <p style="margin-top: 16px;">
+         Quem depende de serviço público merece saber que regras de integridade existem
+         para todos os que administram recursos coletivos.
+      </p>
+      <p style="margin-top: 8px; font-weight: 700;">
+         <strong style="color: var(--amarelo);">Transparência com proteção de dados é justiça social.</strong>
+      </p>
+      <div style="margin-top: 28px;">
+        <a href="/compartilhe" class="btn btn-amarelo btn-lg">✊ PRESSIONE SEU CANDIDATO</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARAÇÃO COM ENFOQUE SOCIAL -->
+  <HeroComparison
+    titulo="Duas classes, duas regras."
+       subtitulo="A transparência pública precisa conviver com direitos, privacidade e fiscalização independente."
+    chamadaCidadao="VOCÊ, trabalhador"
+    chamadaPolitico="POLÍTICO com supersalário"
+  />
+
+  <!-- FRASES COM TOM SOCIAL -->
+  <section class="container">
+    <QuoteCard
+      tom="indignacao"
+      frases={[
+        {
+          icone: '🏭',
+           texto: 'Trabalhadores e pequenos empreendedores precisam de regras simples para cumprir suas obrigações. Quem administra recursos públicos também deve ser submetido a controles claros.',
+           destaque: 'controles claros'
+        },
+        {
+          icone: '💰',
+           texto: 'O debate sobre justiça fiscal exige dados públicos confiáveis, fiscalização competente e respeito ao devido processo.',
+           destaque: 'dados públicos confiáveis'
+        },
+        {
+          icone: '🛡️',
+           texto: 'Sigilo fiscal protege pessoas. Não pode, porém, impedir que órgãos competentes investiguem sinais reais de incompatibilidade patrimonial.',
+           destaque: 'investiguem sinais reais'
+        }
+      ]}
+    />
+  </section>
+
+  <!-- A PROFUNDIDADE DO PROBLEMA -->
+  <section class="secao-escura">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 12px; color: var(--amarelo);">Enquanto um pedreiro paga 27,5% de IR, o grande patrimônio...</h2>
+      <p style="text-align: center; color: #ccc; margin-bottom: 32px;">
+        A injustiça fiscal brasileira não começa no político. Mas é ele quem aprova as leis que mantêm tudo como está.
+      </p>
+
+      <div class="grid-2">
+        <div class="card-info" style="border-top: 6px solid var(--vermelho-alerta);">
+          <h3>🏦 O de cima sobe</h3>
+          <ul style="list-style: none; padding: 0; font-size: 0.95rem;">
+            <li style="padding: 6px 0; border-bottom: 1px solid #eee;">• Lucros e dividendos: <strong>isentos de IR</strong> desde 1995</li>
+            <li style="padding: 6px 0; border-bottom: 1px solid #eee;">• Aplicações em offshores: <strong>sem fiscalização automática</strong></li>
+            <li style="padding: 6px 0; border-bottom: 1px solid #eee;">• Jatinho particular: deduzido como "despesa operacional"</li>
+            <li style="padding: 6px 0; border-bottom: 1px solid #eee;">• Heranças milionárias: imposto irrisório no Brasil</li>
+            <li style="padding: 6px 0;">• Político com supersalário + auxílios: <strong>ninguém audita a evolução do patrimônio</strong></li>
+          </ul>
+        </div>
+
+        <div class="card-info" style="border-top: 6px solid var(--verde);">
+          <h3>👷 O de baixo paga</h3>
+          <ul style="list-style: none; padding: 0; font-size: 0.95rem;">
+            <li style="padding: 6px 0; border-bottom: 1px solid #eee;">• Salário mínimo: <strong>IR retido na fonte</strong>, sem chance de escapar</li>
+            <li style="padding: 6px 0; border-bottom: 1px solid #eee;">• Comprou um carro? <strong>Cruzamento automático</strong> Receita x Detran</li>
+            <li style="padding: 6px 0; border-bottom: 1px solid #eee;">• Errou R$50? <strong>Malha fina</strong> sem perdão</li>
+            <li style="padding: 6px 0; border-bottom: 1px solid #eee;">• Até o extrato do banco é monitorado via e-Financeira</li>
+            <li style="padding: 6px 0;">• Serviço público essencial: <strong>você paga. Político usa.</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="secao" style="text-align: center;">
+    <div class="container">
+      <h2 style="margin-bottom: 12px;">O sistema é desenhado pra proteger quem está em cima.</h2>
+      <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 24px; color: var(--cinza-medio);">
+        A única ferramenta que o povo tem é o voto. E o voto informado.
+        Se o político não mostra o IR, ele não merece seu voto. Simples.
+      </p>
+      <a href="/compartilhe" class="btn btn-vermelho btn-lg">📢 ESPALHE ESSA MENSAGEM</a>
+    </div>
+  </section>
+
+  <ShareBlock
+     texto="Justiça social também precisa de regras claras de integridade para quem administra recursos públicos. #AbraOSigilo"
+    urlDaPagina="https://abrasigilo.com.br/esquerda"
+    mostrarCorrente={true}
+    mostrarGerador={true}
+  />
+
+</BaseLayout>

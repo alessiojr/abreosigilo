@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroComparison from '../components/HeroComparison.astro';
+import ShareBlock from '../components/ShareBlock.astro';
+---
+
+<BaseLayout
+  title="#AbraOSigilo | Transparência para quem pede seu voto"
+  description="Um movimento cívico por compromissos públicos, fiscalização independente e regras claras para candidatos e mandatários."
+  page="home"
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="destaque">MOVIMENTO CÍVICO, SEM PARTIDO</span>
+        <h1>Quem pede seu voto<br />deve prestar contas.</h1>
+        <p>Transparência não é expor a vida de ninguém. É mostrar, com regras e fiscalização, que o patrimônio de quem administra dinheiro público é compatível com sua renda.</p>
+        <div class="hero-actions">
+          <a href="/compartilhe" class="btn btn-amarelo btn-lg">QUERO COBRAR</a>
+          <a href="/proposta" class="btn btn-branco btn-lg">ENTENDER A PROPOSTA</a>
+        </div>
+        <p class="trust-note">Sem acusação sem prova. Sem partido. Com compromisso público verificável.</p>
+      </div>
+      <img class="hero-illustration" src="/images/transparencia-cidada.svg" width="640" height="480" alt="Uma cidadã ilumina um prédio público com uma lanterna, símbolo da transparência" />
+    </div>
+  </section>
+
+  <section class="container" style="margin-top: -20px; position: relative; z-index: 2;">
+    <div class="contador-indignacao">
+      <div class="label">COMEÇA COM UMA PERGUNTA</div>
+      <div class="numero" style="font-size: clamp(2.4rem, 7vw, 4.4rem);">MOSTRE O COMPROMISSO</div>
+      <p style="font-size: 1rem; margin-top: 8px; opacity: .9;">Você pode pedir uma posição pública do seu representante, compartilhar a proposta e acompanhar respostas verificadas.</p>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="container">
+      <h2 style="text-align: center;">O pedido é simples</h2>
+      <p style="text-align: center; color: var(--cinza-medio); max-width: 680px; margin: 8px auto 28px;">Não se trata de divulgar extratos, endereços ou informações da família. A proposta é criar um padrão de integridade com proteção de dados e controle independente.</p>
+      <div class="grid-3">
+        <article class="card-info">
+          <div class="numero-card">1</div>
+          <h3>Compromisso público</h3>
+          <p>O candidato ou mandatário declara, em linguagem simples, se apoia a transparência patrimonial verificável.</p>
+        </article>
+        <article class="card-info">
+          <div class="numero-card">2</div>
+          <h3>Verificação legal</h3>
+          <p>Órgãos competentes verificam sinais de incompatibilidade, com devido processo, proteção de dados e direito de defesa.</p>
+        </article>
+        <article class="card-info">
+          <div class="numero-card">3</div>
+          <h3>Resultado compreensível</h3>
+          <p>O eleitor vê uma certidão ou síntese pública. Dados pessoais e de terceiros continuam protegidos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <HeroComparison
+    titulo="Transparência não é devassa"
+    subtitulo="O desafio é fiscalizar bem, sem transformar privacidade em privilégio ou espetáculo."
+  />
+
+  <section class="secao-escura">
+    <div class="container">
+      <h2 style="text-align: center;">O que muda na sua vida?</h2>
+      <div class="grid-3" style="margin-top: 28px;">
+        <article class="card-info">
+          <h3>Na cidade</h3>
+          <p>Mais condições para acompanhar quem decide sobre escola, saúde, transporte e obras perto da sua casa.</p>
+        </article>
+        <article class="card-info">
+          <h3>No estado</h3>
+          <p>Mais rastreabilidade sobre quem administra grandes contratos, emendas e serviços regionais.</p>
+        </article>
+        <article class="card-info">
+          <h3>No país</h3>
+          <p>Um padrão nacional para candidatos e titulares de mandato, com regras iguais e fiscalização responsável.</p>
+        </article>
+      </div>
+      <div class="hero-actions" style="justify-content: center; margin-top: 32px;">
+        <a href="/constitucionalidade" class="btn btn-amarelo">VER A BASE LEGAL</a>
+        <a href="/placar" class="btn btn-branco">COMO FUNCIONA O PLACAR</a>
+      </div>
+    </div>
+  </section>
+
+  <ShareBlock
+    texto="Quem pede seu voto deve assumir compromisso público com transparência, fiscalização e proteção de dados. Conheça a proposta #AbraOSigilo"
+    urlDaPagina="https://abrasigilo.com.br"
+    mostrarCorrente={true}
+  />
+</BaseLayout>

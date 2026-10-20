@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Dep. Luiza Guimarães",
+    "state": "SP",
+    "party": "UNIÃO",
+    "status": "yes",
+    "phone": "5561999990001",
+    "email": "dep.luiza@camara.leg.br",
+    "photo": ""
+  },
+  {
+    "name": "Dep. Marcos Valente",
+    "state": "MG",
+    "party": "PL",
+    "status": "undecided",
+    "phone": "5561999990002",
+    "email": "dep.marcos@camara.leg.br",
+    "photo": ""
+  },
+  {
+    "name": "Dep. Carlos Barreto",
+    "state": "RJ",
+    "party": "PT",
+    "status": "yes",
+    "phone": "5561999990003",
+    "email": "dep.carlos@camara.leg.br",
+    "photo": ""
+  },
+  {
+    "name": "Dep. Rodrigo Albuquerque",
+    "state": "BA",
+    "party": "PP",
+    "status": "no",
+    "phone": "5561999990004",
+    "email": "dep.rodrigo@camara.leg.br",
+    "photo": ""
+  },
+  {
+    "name": "Dep. Mariana Freitas",
+    "state": "RS",
+    "party": "MDB",
+    "status": "yes",
+    "phone": "5561999990005",
+    "email": "dep.mariana@camara.leg.br",
+    "photo": ""
+  },
+  {
+    "name": "Dep. Fernando Prado",
+    "state": "PR",
+    "party": "PSD",
+    "status": "undecided",
+    "phone": "5561999990006",
+    "email": "dep.fernando@camara.leg.br",
+    "photo": ""
+  },
+  {
+    "name": "Dep. Beatriz Menezes",
+    "state": "PE",
+    "party": "PSB",
+    "status": "yes",
+    "phone": "5561999990007",
+    "email": "dep.beatriz@camara.leg.br",
+    "photo": ""
+  },
+  {
+    "name": "Dep. Roberto Siqueira",
+    "state": "CE",
+    "party": "REPUBLICANOS",
+    "status": "undecided",
+    "phone": "5561999990008",
+    "email": "dep.roberto@camara.leg.br",
+    "photo": ""
+  },
+  {
+    "name": "Dep. Eduardo Vasconcelos",
+    "state": "GO",
+    "party": "PODEMOS",
+    "status": "yes",
+    "phone": "5561999990009",
+    "email": "dep.eduardo@camara.leg.br",
+    "photo": ""
+  },
+  {
+    "name": "Dep. Heloísa Ramos",
+    "state": "SC",
+    "party": "NOVO",
+    "status": "yes",
+    "phone": "5561999990010",
+    "email": "dep.heloisa@camara.leg.br",
+    "photo": ""
+  },
+  {
+    "name": "Dep. Gustavo Lacerda",
+    "state": "PA",
+    "party": "PDT",
+    "status": "undecided",
+    "phone": "5561999990011",
+    "email": "dep.gustavo@camara.leg.br",
+    "photo": ""
+  },
+  {
+    "name": "Dep. Vanessa Rocha",
+    "state": "DF",
+    "party": "PSOL",
+    "status": "yes",
+    "phone": "5561999990012",
+    "email": "dep.vanessa@camara.leg.br",
+    "photo": ""
+  }
+]

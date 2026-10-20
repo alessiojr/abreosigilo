@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  page: 'home' | 'esquerda' | 'direita' | 'centrao' | 'compartilhe' | 'placar' | 'proposta' | 'constitucionalidade' | 'minuta-pec' | 'caminhos-legais';
+}
+
+const { title, description, page } = Astro.props;
+const currentYear = new Date().getFullYear();
+
+const navItems = [
+  { href: '/', label: 'Início', page: 'home' as const },
+  { href: '/esquerda', label: 'Social', page: 'esquerda' as const },
+  { href: '/direita', label: 'Anticorrupção', page: 'direita' as const },
+  { href: '/centrao', label: 'Indecisos', page: 'centrao' as const },
+  { href: '/compartilhe', label: 'Compartilhe', page: 'compartilhe' as const },
+  { href: '/placar', label: 'Placar', page: 'placar' as const },
+  { href: '/proposta', label: 'A proposta', page: 'proposta' as const },
+  { href: '/minuta-pec', label: 'Minuta PEC', page: 'minuta-pec' as const },
+  { href: '/caminhos-legais', label: 'Caminhos legais', page: 'caminhos-legais' as const },
+  { href: '/constitucionalidade', label: 'Base legal', page: 'constitucionalidade' as const },
+];
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title} | #AbraOSigilo</title>
+  <meta name="description" content={description}>
+  <meta name="robots" content="index,follow">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="#AbraOSigilo">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content="https://abrasigilo.com.br/images/abra-o-sigilo-card.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content="https://abrasigilo.com.br/images/abra-o-sigilo-card.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    body { opacity: 1; }
+  </style>
+</head>
+<body>
+  <header class="header-site">
+    <div class="container header-inner">
+      <a href="/" class="header-logo">
+        <span class="icone">!</span>
+        <span>#AbraOSigilo</span>
+      </a>
+    </div>
+  </header>
+
+  <nav class="landing-nav" aria-label="Navegação principal">
+    <div class="container landing-nav-inner">
+      {navItems.map(item => (
+        <a href={item.href} class={page === item.page ? 'atual' : ''}>
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </nav>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="footer-site">
+    <div class="container">
+      <p><strong>#AbraOSigilo</strong> — Movimento Cívico pela Transparência Patrimonial na Política</p>
+      <p style="margin-top: 8px;">Isto não é sobre partido. É sobre regras claras, compromisso público e prestação de contas.</p>
+      <p style="margin-top: 12px; font-size: 0.75rem;">© {currentYear} · Minutas e análises são materiais de debate público, não parecer jurídico.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

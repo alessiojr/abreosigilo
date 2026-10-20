@@ -1,0 +1,39 @@
+---
+// Componente: Cards com frases de efeito
+export interface Props {
+  frases: Array<{
+    icone: string;
+    texto: string;
+    destaque?: string;
+  }>;
+  tom?: 'indignacao' | 'esperanca' | 'acao';
+}
+
+const { frases, tom = 'indignacao' } = Astro.props;
+
+const coresPorTom = {
+  indignacao: 'var(--vermelho-alerta)',
+  esperanca: 'var(--verde)',
+  acao: 'var(--amarelo)',
+};
+
+const bordaCor = coresPorTom[tom];
+---
+
+<div class="frases-section">
+  {frases.map(frase => (
+    <div class="frase-card" style={`border-left-color: ${bordaCor}`}>
+      <span class="icone-frase">{frase.icone}</span>
+      <p>
+        {frase.destaque ? (
+          <>
+            {frase.texto.replace(frase.destaque, '')}
+            <strong style="background: var(--amarelo); padding: 0 4px;">{frase.destaque}</strong>
+          </>
+        ) : (
+          frase.texto
+        )}
+      </p>
+    </div>
+  ))}
+</div>

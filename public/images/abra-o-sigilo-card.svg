@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Abra o Sigilo: quem pede seu voto deve prestar contas">
+  <rect width="1200" height="630" fill="#002776"/><circle cx="975" cy="147" r="126" fill="#ffdf00"/>
+  <path d="M0 530 350 370l300 160 280-230 270 170v160H0z" fill="#001b53"/>
+  <rect x="670" y="205" width="320" height="250" rx="14" fill="#fff"/><path d="M640 205h380l-30-52H670z" fill="#f3f5f7"/>
+  <path d="M715 253h44v160h-44zm76 0h44v160h-44zm76 0h44v160h-44z" fill="#009c3b"/><path d="M646 455h368v25H646z" fill="#ffdf00"/>
+  <text x="75" y="190" fill="#ffdf00" font-family="Arial,sans-serif" font-size="46" font-weight="800">#ABRAOSIGILO</text>
+  <text x="75" y="278" fill="#fff" font-family="Arial,sans-serif" font-size="68" font-weight="800">QUEM PEDE SEU VOTO</text>
+  <text x="75" y="360" fill="#fff" font-family="Arial,sans-serif" font-size="68" font-weight="800">DEVE PRESTAR CONTAS.</text>
+  <text x="75" y="435" fill="#bfcce8" font-family="Arial,sans-serif" font-size="30">Compromisso público. Fiscalização legal. Proteção de dados.</text>
+</svg>

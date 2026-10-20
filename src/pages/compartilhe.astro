@@ -1,0 +1,322 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ShareBlock from '../components/ShareBlock.astro';
+---
+
+<BaseLayout
+  title="Espalhe o movimento — #AbraOSigilo"
+  description="Ferramentas gratuitas para você pressionar políticos e viralizar a transparência. Desafio no Twitter, corrente de WhatsApp, compartilhamento rápido."
+  page="compartilhe"
+>
+
+  <!-- HERO -->
+  <section class="hero" style="background: linear-gradient(135deg, var(--vermelho-alerta) 0%, #c62828 50%, var(--preto) 100%);">
+    <div class="container">
+      <span class="destaque" style="background: var(--amarelo); color: var(--preto); display: inline-block; margin-bottom: 16px;">HORA DE AGIR</span>
+      <h1>Use nossas<br>armas digitais.</h1>
+      <p style="margin-top: 16px;">
+         Aqui você encontra mensagens prontas para pedir uma posição pública,
+         compartilhar a proposta e convidar mais pessoas para um debate responsável.
+      </p>
+      <p style="margin-top: 8px; font-weight: 700; font-size: 1.2rem;">
+         <strong style="color: var(--amarelo);">Uma pergunta respeitosa. Uma posição pública. Mais clareza para o eleitor.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- FERRAMENTAS -->
+  <section class="secao">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 8px;">🛠️ Kit de Pressão Cidadã</h2>
+       <p style="text-align: center; color: var(--cinza-medio); margin-bottom: 32px;">Escolha uma forma simples de participar sem atacar pessoas ou espalhar informação sem fonte.</p>
+
+      <div class="grid-2">
+        <!-- Ferramenta 1: Corrente de WhatsApp -->
+        <div class="card-info" style="border-top: 6px solid #25D366;">
+          <h3>📱 Corrente de WhatsApp</h3>
+          <p style="font-size: 0.95rem; color: var(--cinza-medio);">Texto pronto formatado para você repassar. Quanto mais grupos, mais pressão.</p>
+
+          <div style="background: var(--cinza-claro); padding: 16px; border-radius: var(--radius); font-size: 0.85rem; margin: 12px 0; white-space: pre-line;">
+            📢 Quem pede seu voto deve prestar contas.
+
+            O #AbraOSigilo defende compromisso público com transparência, fiscalização independente e proteção de dados.
+
+            📄 Conheça a proposta e a análise constitucional: https://abrasigilo.com.br
+
+            👉 Compartilhe com quem quer regras claras para todos.
+          </div>
+
+          <a href="https://wa.me/?text=%F0%9F%9A%A8%20Voc%C3%AA%20votaria%20num%20pol%C3%ADtico%20que%20esconde%20dinheiro%3F%20%F0%9F%9A%A8%0A%0AA%20lei%20protege%20o%20sigilo%20DELES%2C%20mas%20o%20NOSSO%20VOTO%20pode%20obrig%C3%A1-los%20a%20mostrar%20a%20verdade!%0A%0A%F0%9F%93%8A%20Entre%20no%20movimento%20%23AbraOSigilo%20e%20veja%20quem%20j%C3%A1%20abriu%20e%20quem%20est%C3%A1%20fugindo%3A%20https%3A%2F%2Fabrasigilo.com.br%0A%0A%F0%9F%91%89%20Repasse%20para%205%20amigos%20que%20est%C3%A3o%20cansados%20de%20corrup%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn btn-whatsapp" style="display: block; text-align: center;">
+            📱 DISPARAR NO WHATSAPP
+          </a>
+        </div>
+
+        <!-- Ferramenta 2: Desafio no Twitter -->
+        <div class="card-info" style="border-top: 6px solid #000;">
+          <h3>🐦 Desafie seu político no Twitter/X</h3>
+          <p style="font-size: 0.95rem; color: var(--cinza-medio);">Cole o @ do candidato. O sistema gera um tweet automático de cobrança.</p>
+
+          <div style="margin: 12px 0;">
+            <label for="gerador-arroba2" style="font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 6px;">@ do político:</label>
+            <div style="display: flex; gap: 8px; margin-bottom: 10px;">
+              <input type="text" id="gerador-arroba2" placeholder="@NomeDoPolitico" style="flex: 1; padding: 10px 14px; border: 2px solid #ccc; border-radius: var(--radius); font-size: 1rem; font-family: inherit;">
+              <button type="button" id="btn-gerar-tweet2" class="btn btn-azul" style="font-size: 0.85rem; padding: 8px 14px; white-space: nowrap;">Gerar</button>
+            </div>
+            <div id="preview-tweet2" style="background: var(--cinza-claro); padding: 14px; border-radius: var(--radius); font-size: 0.85rem; min-height: 50px; display: none; margin-bottom: 10px;"></div>
+            <a href="#" id="link-tweet2" target="_blank" rel="noopener" class="btn btn-azul" style="display: none; font-size: 0.9rem;">🐦 Postar no Twitter/X</a>
+          </div>
+        </div>
+
+        <!-- Ferramenta 3: Cards para Instagram/Stories -->
+        <div class="card-info" style="border-top: 6px solid #E1306C;">
+          <h3>📸 Material para Stories</h3>
+          <p style="font-size: 0.95rem; color: var(--cinza-medio);">Textos prontos para você copiar e colar no Instagram, TikTok ou Facebook.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px;">
+            <div style="background: var(--cinza-claro); padding: 12px; border-radius: var(--radius); position: relative;">
+              <p style="font-size: 0.85rem; margin: 0; font-weight: 600;">"Você cai na malha fina por R$50. Político esconde milhões com 'sigilo bancário'. Chega. #AbraOSigilo"</p>
+              <button class="btn btn-branco" style="font-size: 0.75rem; padding: 4px 10px; margin-top: 6px;" data-copy="Você cai na malha fina por R$50. Político esconde milhões com 'sigilo bancário'. Chega. #AbraOSigilo">Copiar</button>
+            </div>
+            <div style="background: var(--cinza-claro); padding: 12px; border-radius: var(--radius);">
+              <p style="font-size: 0.85rem; margin: 0; font-weight: 600;">"Se você não tem nada a esconder, por que seu político tem? Descubra no #AbraOSigilo"</p>
+              <button class="btn btn-branco" style="font-size: 0.75rem; padding: 4px 10px; margin-top: 6px;" data-copy="Se você não tem nada a esconder, por que seu político tem? Descubra no #AbraOSigilo">Copiar</button>
+            </div>
+            <div style="background: var(--cinza-claro); padding: 12px; border-radius: var(--radius);">
+              <p style="font-size: 0.85rem; margin: 0; font-weight: 600;">"Não importa o partido. Político honesto mostra as contas. #AbraOSigilo"</p>
+              <button class="btn btn-branco" style="font-size: 0.75rem; padding: 4px 10px; margin-top: 6px;" data-copy="Não importa o partido. Político honesto mostra as contas. #AbraOSigilo">Copiar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ferramenta 4: Compartilhamento Direto -->
+        <div class="card-info" style="border-top: 6px solid var(--vermelho-alerta);">
+          <h3>📢 Compartilhamento Rápido</h3>
+          <p style="font-size: 0.95rem; color: var(--cinza-medio);">Escolha a rede e dispare. Quanto mais gente souber, mais pressão a gente faz.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px;">
+            <a href="https://wa.me/?text=%F0%9F%9A%A8%20Voc%C3%AA%20votaria%20num%20pol%C3%ADtico%20que%20esconde%20dinheiro%3F%20%F0%9F%9A%A8%0A%0AN%C3%A3o%20importa%20o%20partido.%20Pol%C3%ADtico%20honesto%20mostra%20as%20contas.%0A%0A%F0%9F%93%8A%20Veja%20quem%20j%C3%A1%20abriu%20o%20sigilo%3A%20https%3A%2F%2Fabrasigilo.com.br%20%23AbraOSigilo" target="_blank" rel="noopener" class="btn btn-whatsapp" style="display: block; text-align: center; font-size: 0.9rem; padding: 12px;">
+              📱 WhatsApp
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=N%C3%A3o%20importa%20o%20partido.%20Pol%C3%ADtico%20honesto%20mostra%20as%20contas.%20Se%20voc%C3%AA%20n%C3%A3o%20tem%20nada%20a%20esconder%2C%20por%20que%20seu%20pol%C3%ADtico%20tem%3F%20%23AbraOSigilo&url=https%3A%2F%2Fabrasigilo.com.br" target="_blank" rel="noopener" class="btn btn-azul" style="display: block; text-align: center; font-size: 0.9rem; padding: 12px; background: #000; color: #fff;">
+              𝕏 Twitter / X
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fabrasigilo.com.br&quote=N%C3%A3o%20importa%20o%20partido.%20Pol%C3%ADtico%20honesto%20mostra%20as%20contas.%20%23AbraOSigilo" target="_blank" rel="noopener" class="btn btn-azul" style="display: block; text-align: center; font-size: 0.9rem; padding: 12px; background: #1877F2; color: #fff;">
+              📘 Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" style="background: #e8edf7;">
+    <div class="container">
+      <div class="gerador-card-header">
+        <div>
+          <span class="destaque" style="background: var(--azul); color: var(--branco);">NOVO</span>
+          <h2 style="margin-top: 10px;">Crie seu card em PNG</h2>
+          <p>Escolha uma mensagem, baixe a imagem e publique onde quiser. O arquivo é criado no seu navegador, sem envio de dados.</p>
+        </div>
+        <img src="/images/transparencia-cidada.svg" width="200" height="150" alt="Ilustração de transparência cidadã" loading="lazy" />
+      </div>
+
+      <div class="gerador-card-grid">
+        <div class="card-info">
+          <label for="card-mensagem" class="form-label">Mensagem do card</label>
+          <select id="card-mensagem" class="form-control">
+            <option value="Quem pede seu voto deve prestar contas.">Quem pede seu voto deve prestar contas.</option>
+            <option value="Transparência com fiscalização e proteção de dados.">Transparência com fiscalização e proteção de dados.</option>
+            <option value="Não é esquerda nem direita. É regra clara para todos.">Não é esquerda nem direita. É regra clara para todos.</option>
+          </select>
+
+          <label for="card-formato" class="form-label">Formato</label>
+          <select id="card-formato" class="form-control">
+            <option value="square">Quadrado: Instagram e WhatsApp</option>
+            <option value="story">Vertical: Stories e TikTok</option>
+          </select>
+
+          <label for="card-complemento" class="form-label">Complemento opcional</label>
+          <input id="card-complemento" class="form-control" maxlength="80" placeholder="Ex.: Conheça a proposta" />
+          <p class="form-help">Use uma frase curta. O card sempre inclui #AbraOSigilo.</p>
+
+          <div class="hero-actions" style="margin-top: 20px;">
+            <button type="button" id="atualizar-card" class="btn btn-azul">ATUALIZAR PREVIEW</button>
+            <button type="button" id="baixar-card" class="btn btn-amarelo">BAIXAR PNG</button>
+          </div>
+        </div>
+
+        <div class="card-preview-wrap">
+          <canvas id="canvas-card" width="1080" height="1080" aria-label="Prévia do card para redes sociais"></canvas>
+          <p class="form-help" style="text-align: center;">PNG em alta resolução, sem marca d'água adicional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EFEITO DOMINÓ -->
+  <section class="secao-escura">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 12px; color: var(--amarelo);">Como funciona o efeito dominó:</h2>
+
+      <div class="grid-3" style="margin-top: 24px;">
+        <div class="card-info" style="text-align: center;">
+          <span style="font-size: 3rem;">1️⃣</span>
+          <h3 style="font-size: 1.1rem;">Você compartilha</h3>
+          <p style="font-size: 0.9rem;">Manda a corrente de WhatsApp para 5 grupos. Posta no Twitter marcando um candidato.</p>
+        </div>
+        <div class="card-info" style="text-align: center;">
+          <span style="font-size: 3rem;">2️⃣</span>
+          <h3 style="font-size: 1.1rem;">O político vê</h3>
+          <p style="font-size: 0.9rem;">Quanto mais gente cobrando, maior o custo político de ignorar. Eles monitoram redes sociais o dia inteiro.</p>
+        </div>
+        <div class="card-info" style="text-align: center;">
+          <span style="font-size: 3rem;">3️⃣</span>
+          <h3 style="font-size: 1.1rem;">Alguém cede</h3>
+          <p style="font-size: 0.9rem;">Basta um político abrir as contas. O resto fica marcado como "o que será que ele esconde?"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ShareBlock
+           texto="Não importa o partido: quem pede seu voto deve assumir compromisso público com transparência e fiscalização. #AbraOSigilo"
+    urlDaPagina="https://abrasigilo.com.br/compartilhe"
+    mostrarGerador={true}
+  />
+
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const urlDaPagina = 'https://abrasigilo.com.br';
+
+    // Gerador de tweet 2
+    const arrobaInput2 = document.getElementById('gerador-arroba2') as HTMLInputElement | null;
+    const btnGerar2 = document.getElementById('btn-gerar-tweet2');
+    const preview2 = document.getElementById('preview-tweet2');
+    const linkTweet2 = document.getElementById('link-tweet2') as HTMLAnchorElement | null;
+
+    if (btnGerar2 && preview2 && linkTweet2 && arrobaInput2) {
+      btnGerar2.addEventListener('click', () => {
+        const arroba = arrobaInput2.value.trim() || '@SeuCandidato';
+        const tweetTexto = `Ei ${arroba}, sou eleitor(a) e gostaria de saber sua posição sobre transparência patrimonial verificável, com proteção de dados e fiscalização independente. Você apoia? #AbraOSigilo ${urlDaPagina}`;
+        preview2.textContent = tweetTexto;
+        preview2.style.display = 'block';
+        linkTweet2.style.display = 'inline-flex';
+        linkTweet2.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetTexto)}&hashtags=AbraOSigilo,TransparenciaJa`;
+      });
+    }
+
+    // Botões copiar texto
+    document.querySelectorAll('[data-copy]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const text = btn.getAttribute('data-copy') || '';
+        navigator.clipboard.writeText(text).then(() => {
+          const original = btn.textContent;
+          btn.textContent = '✓ Copiado!';
+          setTimeout(() => { btn.textContent = original; }, 2000);
+        });
+      });
+    });
+
+    const canvas = document.getElementById('canvas-card') as HTMLCanvasElement | null;
+    const mensagem = document.getElementById('card-mensagem') as HTMLSelectElement | null;
+    const formato = document.getElementById('card-formato') as HTMLSelectElement | null;
+    const complemento = document.getElementById('card-complemento') as HTMLInputElement | null;
+    const atualizarCard = document.getElementById('atualizar-card');
+    const baixarCard = document.getElementById('baixar-card');
+
+    function quebrarLinhas(ctx: CanvasRenderingContext2D, texto: string, largura: number) {
+      const palavras = texto.split(' ');
+      const linhas: string[] = [];
+      let linha = '';
+      palavras.forEach(palavra => {
+        const candidata = linha ? `${linha} ${palavra}` : palavra;
+        if (ctx.measureText(candidata).width > largura && linha) {
+          linhas.push(linha);
+          linha = palavra;
+        } else {
+          linha = candidata;
+        }
+      });
+      if (linha) linhas.push(linha);
+      return linhas;
+    }
+
+    function desenharCard() {
+      if (!canvas || !mensagem || !formato || !complemento) return;
+      const vertical = formato.value === 'story';
+      canvas.width = 1080;
+      canvas.height = vertical ? 1920 : 1080;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      const largura = canvas.width;
+      const altura = canvas.height;
+      const gradiente = ctx.createLinearGradient(0, 0, largura, altura);
+      gradiente.addColorStop(0, '#002776');
+      gradiente.addColorStop(.62, '#001741');
+      gradiente.addColorStop(1, '#009c3b');
+      ctx.fillStyle = gradiente;
+      ctx.fillRect(0, 0, largura, altura);
+
+      ctx.fillStyle = '#ffdf00';
+      ctx.beginPath();
+      ctx.arc(largura - 125, 150, 110, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = 'rgba(255,255,255,.08)';
+      ctx.beginPath();
+      ctx.arc(largura - 130, altura - 50, 390, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = '#ffdf00';
+      ctx.font = '800 48px Arial, sans-serif';
+      ctx.fillText('#ABRAOSIGILO', 76, 115);
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '700 32px Arial, sans-serif';
+      ctx.fillText('TRANSPARENCIA PARA QUEM PEDE SEU VOTO', 76, 165);
+
+      const maxLargura = largura - 152;
+      let tamanhoFonte = vertical ? 106 : 92;
+      let linhas: string[] = [];
+      while (tamanhoFonte > 48) {
+        ctx.font = `900 ${tamanhoFonte}px Arial, sans-serif`;
+        linhas = quebrarLinhas(ctx, mensagem.value, maxLargura);
+        if (linhas.length <= (vertical ? 5 : 4)) break;
+        tamanhoFonte -= 6;
+      }
+      const inicioY = vertical ? 680 : 450;
+      const alturaLinha = tamanhoFonte * 1.1;
+      ctx.fillStyle = '#ffffff';
+      linhas.forEach((linha, indice) => ctx.fillText(linha, 76, inicioY + indice * alturaLinha));
+
+      const complementoTexto = complemento.value.trim() || 'Conheca a proposta em abrasigilo.com.br';
+      ctx.font = '600 36px Arial, sans-serif';
+      ctx.fillStyle = '#d9e3ff';
+      const linhasComplemento = quebrarLinhas(ctx, complementoTexto, maxLargura);
+      const complementoY = inicioY + linhas.length * alturaLinha + 80;
+      linhasComplemento.forEach((linha, indice) => ctx.fillText(linha, 76, complementoY + indice * 48));
+
+      const baseY = altura - 120;
+      ctx.fillStyle = '#ffdf00';
+      ctx.fillRect(76, baseY - 28, 310, 8);
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '700 30px Arial, sans-serif';
+      ctx.fillText('COMPROMISSO. CONTROLE. CONFIANCA.', 76, baseY + 30);
+    }
+
+    atualizarCard?.addEventListener('click', desenharCard);
+    mensagem?.addEventListener('change', desenharCard);
+    formato?.addEventListener('change', desenharCard);
+    complemento?.addEventListener('input', desenharCard);
+    baixarCard?.addEventListener('click', () => {
+      if (!canvas) return;
+      desenharCard();
+      const link = document.createElement('a');
+      link.download = `abra-o-sigilo-${formato?.value === 'story' ? 'story' : 'card'}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+    desenharCard();
+  });
+</script>

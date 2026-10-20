@@ -1,0 +1,61 @@
+---
+// Componente: comparação visual Cidadão vs Político
+export interface Props {
+  titulo: string;
+  subtitulo: string;
+  chamadaCidadao?: string;
+  chamadaPolitico?: string;
+}
+
+const { titulo, subtitulo, chamadaCidadao, chamadaPolitico } = Astro.props;
+const padraoCidadao = chamadaCidadao || "VOCÊ, cidadão comum";
+const padraoPolitico = chamadaPolitico || "POLÍTICO eleito";
+---
+
+<section class="secao">
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: 8px;">{titulo}</h2>
+    <p style="text-align: center; color: var(--cinza-medio); max-width: 600px; margin: 0 auto 24px;">{subtitulo}</p>
+
+    <div class="comparacao">
+      <!-- Card do Cidadão -->
+      <div class="card voce">
+        <h3><span style="font-size: 1.5rem;">🧑</span> {padraoCidadao}</h3>
+        <span class="emoji-grande">🔍</span>
+        <ul>
+          <li><span class="sim">✓</span> Pode ter de prestar contas à Receita, conforme renda e patrimônio</li>
+          <li><span class="sim">✓</span> Inconsistências podem levar a uma fiscalização</li>
+          <li><span class="sim">✓</span> Seus dados fiscais são protegidos por sigilo</li>
+          <li><span class="sim">✓</span> Você espera o mesmo padrão de integridade de quem administra recursos públicos</li>
+        </ul>
+        <p style="text-align: center; margin-top: 16px; font-weight: 800; font-size: 1.1rem; color: var(--verde);">
+          A regra precisa ser justa, transparente e respeitar direitos.
+        </p>
+      </div>
+
+      <!-- Card do Político -->
+      <div class="card politico">
+        <h3><span style="font-size: 1.5rem;">🏛️</span> {padraoPolitico}</h3>
+        <span class="emoji-grande">🔒</span>
+        <ul>
+          <li><span class="nao">!</span> Entrega declaração de bens à Justiça Eleitoral, prevista na legislação</li>
+          <li><span class="nao">!</span> A declaração tem limites e não substitui uma verificação independente</li>
+          <li><span class="nao">!</span> Dados fiscais e bancários também são protegidos por sigilo legal</li>
+          <li><span class="nao">!</span> Falta um padrão nacional de compromisso público e verificável</li>
+        </ul>
+        <p style="text-align: center; margin-top: 16px; font-weight: 800; font-size: 1.1rem; color: var(--vermelho-alerta);">
+          Transparência não é expor dados íntimos: é demonstrar integridade com controle e regras.
+        </p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+      <p style="font-size: 1.4rem; font-weight: 900; font-family: var(--font-titulos); text-transform: uppercase; color: var(--vermelho-alerta);">
+         ⚠️ A PERGUNTA É: QUAL REGRA VALE PARA QUEM PEDE SEU VOTO?
+      </p>
+      <p style="font-size: 1.1rem; font-weight: 700;">
+        Cobrar resposta não é acusar. <strong>É pedir compromisso, evidência e fiscalização dentro da lei.</strong>
+      </p>
+    </div>
+  </div>
+</section>

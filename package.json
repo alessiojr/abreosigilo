@@ -1,0 +1,15 @@
+{
+  "name": "site-sigilo",
+  "version": "2.0.0",
+  "description": "Plataforma cívica viral pela transparência patrimonial dos políticos — SIGILO ZERO",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.15.0"
+  }
+}

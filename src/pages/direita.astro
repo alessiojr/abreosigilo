@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroComparison from '../components/HeroComparison.astro';
+import ShareBlock from '../components/ShareBlock.astro';
+import QuoteCard from '../components/QuoteCard.astro';
+---
+
+<BaseLayout
+  title="Anticorrupção de verdade — #AbraOSigilo"
+  description="Eficiência pública exige compromisso verificável, fiscalização independente e prestação de contas."
+  page="direita"
+>
+
+  <!-- HERO -->
+  <section class="hero" style="background: linear-gradient(135deg, var(--preto) 0%, #1a472a 40%, var(--azul) 100%);">
+    <div class="container">
+      <span class="destaque" style="background: var(--amarelo); color: var(--preto); display: inline-block; margin-bottom: 16px;">PARA QUEM QUER EFICIÊNCIA E HONESTIDADE</span>
+      <h1>Se o Estado é pesado<br>pra você, por que é leve<br>com os políticos?</h1>
+      <p style="margin-top: 16px;">
+        Você defende menos Estado, mais liberdade e responsabilidade individual.
+         Por isso, faz sentido cobrar de representantes um compromisso público de integridade.
+      </p>
+      <p style="margin-top: 8px; font-weight: 700;">
+        <strong style="color: var(--amarelo);">Corrupção é a forma mais cruel de imposto.</strong>
+        Ela toma seu dinheiro e ainda destrói a confiança nas instituições.
+      </p>
+      <div style="margin-top: 28px;">
+        <a href="/compartilhe" class="btn btn-amarelo btn-lg">🔍 EXIJA TRANSPARÊNCIA</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARAÇÃO COM ENFOQUE EFICIÊNCIA -->
+  <HeroComparison
+    titulo="Você responde por cada centavo. O político, não."
+    subtitulo="Se o contribuinte é auditado por inteiro, o representante público também tem que ser. Responsabilidade fiscal não pode ter dois pesos."
+    chamadaCidadao="VOCÊ, contribuinte"
+    chamadaPolitico="POLÍTICO, seu empregado"
+  />
+
+  <!-- FRASES COM TOM ANTICORRUPÇÃO -->
+  <section class="container">
+    <QuoteCard
+      tom="indignacao"
+      frases={[
+        {
+          icone: '💸',
+           texto: 'Desvio e desperdício de recursos públicos prejudicam serviços e aumentam o custo de viver no Brasil. Prevenção exige controles que funcionem.',
+           destaque: 'controles que funcionem'
+        },
+        {
+          icone: '🔑',
+           texto: 'Fiscalização séria não é acusação automática. É um sistema que exige evidência, responde a perguntas legítimas e garante defesa.',
+           destaque: 'evidência e defesa'
+        },
+        {
+          icone: '📋',
+          texto: 'Transparência não é pauta de esquerda nem de direita. É pauta de quem trabalha e paga imposto. Sem auditoria real, todo governo é ineficiente.',
+          destaque: 'pauta de quem trabalha'
+        }
+      ]}
+    />
+  </section>
+
+  <!-- EFICIÊNCIA -->
+  <section class="secao-escura">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 12px; color: var(--amarelo);">Se uma empresa listada na Bolsa tem que abrir balanço, por que o político não?</h2>
+      <p style="text-align: center; color: #ccc; margin-bottom: 32px;">
+        Qualquer empresa que capta dinheiro público (ações, debêntures) é obrigada a publicar balanço auditado trimestralmente.
+        O político capta seu voto e não tem obrigação nenhuma.
+      </p>
+
+      <div class="grid-3">
+        <div class="card-info">
+          <div class="numero-card">1</div>
+          <h3>Balanço real do mandato</h3>
+          <p>Assim como uma empresa mostra lucro e prejuízo, o político tem que mostrar a evolução do próprio patrimônio. <strong>Se enriqueceu mais do que o salário explica, tem que justificar.</strong></p>
+        </div>
+        <div class="card-info">
+          <div class="numero-card">2</div>
+          <h3>Auditoria independente</h3>
+          <p>Empresas têm auditoria externa. Políticos não. Cruzamento automático de dados da Receita Federal + CGU resolveria isso com inteligência fiscal.</p>
+        </div>
+        <div class="card-info">
+          <div class="numero-card">3</div>
+          <h3>Mercado pune quem esconde</h3>
+          <p>Na Bolsa, empresa que maquia balanço quebra. Na política, o político que esconde conta é reeleito. <strong>Vamos virar esse jogo.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="secao" style="text-align: center;">
+    <div class="container">
+      <h2 style="margin-bottom: 12px;">Não existe governo eficiente sem transparência.</h2>
+      <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 24px; color: var(--cinza-medio);">
+        De nada adianta defender estado mínimo se o dinheiro que sobra do estado máximo atual vai para o bolso de político corrupto.
+      </p>
+      <a href="/compartilhe" class="btn btn-vermelho btn-lg">📢 COMPARTILHE ESSA IDEIA</a>
+    </div>
+  </section>
+
+  <ShareBlock
+     texto="Eficiência pública exige compromisso verificável, fiscalização independente e prestação de contas. #AbraOSigilo"
+    urlDaPagina="https://abrasigilo.com.br/direita"
+    mostrarCorrente={true}
+    mostrarGerador={true}
+  />
+
+</BaseLayout>
