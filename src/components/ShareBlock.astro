@@ -7,6 +7,8 @@ export interface Props {
 }
 
 const { texto, urlDaPagina = '/', mostrarGerador, mostrarCorrente } = Astro.props;
+const siteUrl = (Astro.site ? Astro.site.origin : 'https://viaqui.com.br').replace(/\/$/, '');
+const fullUrl = urlDaPagina.startsWith('http') ? urlDaPagina : `${siteUrl}${urlDaPagina.startsWith('/') ? '' : '/'}${urlDaPagina}`;
 ---
 
 <div class="secao" style="padding: 40px 0;" data-share-block data-share-path={urlDaPagina} data-share-text={texto}>
@@ -28,7 +30,7 @@ const { texto, urlDaPagina = '/', mostrarGerador, mostrarCorrente } = Astro.prop
 
 O #AbraOSigilo defende compromisso público com transparência, fiscalização independente e proteção de dados.
 
-Conheça a proposta: {urlDaPagina}</p>
+Conheça a proposta: {fullUrl}</p>
       </div>
     )}
 

@@ -1,9 +1,9 @@
 # #AbraOSigilo | Plataforma Cívica pela Transparência Patrimonial na Política
 
-[![GitHub Pages](https://img.shields.io/badge/Demo%20Online-GitHub%20Pages-success?style=for-the-badge&logo=github)](https://alessiojr.github.io/abreosigilo/)
+[![Website](https://img.shields.io/badge/Website-viaqui.com.br-success?style=for-the-badge&logo=googlechrome)](https://viaqui.com.br/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](./LICENSE)
 [![Framework: Astro](https://img.shields.io/badge/Framework-Astro%204.x-ff5d01?style=for-the-badge&logo=astro)](https://astro.build)
-[![Status: Ativo](https://img.shields.io/badge/Status-Ativo%202026-green?style=for-the-badge)](https://alessiojr.github.io/abreosigilo/)
+[![Status: Ativo](https://img.shields.io/badge/Status-Ativo%202026-green?style=for-the-badge)](https://viaqui.com.br/)
 
 > **"Quem pede seu voto deve prestar contas. Transparência não é devassa íntima: é regra republicana, fiscalização independente e proteção de dados."**
 
@@ -13,8 +13,8 @@ O **#AbraOSigilo** (também conhecido como **Sigilo Zero**) é uma iniciativa c�
 
 ## 🌐 Acesse a Aplicação Online
 
-O projeto está publicado e disponível publicamente via GitHub Pages:  
-👉 **[https://alessiojr.github.io/abreosigilo/](https://alessiojr.github.io/abreosigilo/)**
+O projeto está publicado e disponível publicamente:  
+👉 **[https://viaqui.com.br/](https://viaqui.com.br/)**
 
 ---
 
@@ -22,17 +22,17 @@ O projeto está publicado e disponível publicamente via GitHub Pages:
 
 | Rota | Descrição |
 | :--- | :--- |
-| **[`/`](https://alessiojr.github.io/abreosigilo/)** | Página inicial com a comparação clara entre a fiscalização do cidadão comum e a do político. |
-| **[`/flavio`](https://alessiojr.github.io/abreosigilo/flavio/)** | **Caso Flávio:** *"Só voto no Flávio se abrir o sigilo. Quem não deve, não teme."* Desafio cívico de coerência e enquete do eleitor. |
-| **[`/proposta`](https://alessiojr.github.io/abreosigilo/proposta/)** | A proposta detalhada em linguagem acessível (sem juridiquês). |
-| **[`/placar`](https://alessiojr.github.io/abreosigilo/placar/)** | Placar cívico da transparência com acompanhamento de posicionamentos. |
-| **[`/compartilhe`](https://alessiojr.github.io/abreosigilo/compartilhe/)** | Central de mobilização: correntes prontas de WhatsApp, posts no X e gerador de cards em PNG no navegador. |
-| **[`/minuta-pec`](https://alessiojr.github.io/abreosigilo/minuta-pec/)** | Minuta completa de Proposta de Emenda à Constituição (PEC) alterando os arts. 14 e 37 da CF/88. |
-| **[`/caminhos-legais`](https://alessiojr.github.io/abreosigilo/caminhos-legais/)** | Guia de tramitação: o que o Presidente pode fazer por Decreto vs. o que exige PEC ou Lei Complementar. |
-| **[`/constitucionalidade`](https://alessiojr.github.io/abreosigilo/constitucionalidade/)** | Fundamentação jurídica robusta (ponderação de direitos fundamentais, jurisprudência do STF e tratados da ONU/OEA). |
-| **[`/direita`](https://alessiojr.github.io/abreosigilo/direita/)** | Abordagem para liberais e conservadores: eficiência do Estado, responsabilidade fiscal e coerência moral. |
-| **[`/esquerda`](https://alessiojr.github.io/abreosigilo/esquerda/)** | Abordagem para defensores da justiça social: recursos desviados da corrupção fazem falta em escolas e hospitais. |
-| **[`/centrao`](https://alessiojr.github.io/abreosigilo/centrao/)** | Abordagem matemática para indecisos: *"Não é ideologia, é prestação de contas"*. |
+| **[`/`](https://viaqui.com.br/)** | Página inicial com a comparação clara entre a fiscalização do cidadão comum e a do político. |
+| **[`/flavio`](https://viaqui.com.br/flavio)** | **Caso Flávio:** *"Só voto no Flávio se abrir o sigilo. Quem não deve, não teme."* Desafio cívico de coerência e enquete do eleitor. |
+| **[`/proposta`](https://viaqui.com.br/proposta)** | A proposta detalhada em linguagem acessível (sem juridiquês). |
+| **[`/placar`](https://viaqui.com.br/placar)** | Placar cívico da transparência com acompanhamento de posicionamentos. |
+| **[`/compartilhe`](https://viaqui.com.br/compartilhe)** | Central de mobilização: correntes prontas de WhatsApp, posts no X e gerador de cards em PNG no navegador. |
+| **[`/minuta-pec`](https://viaqui.com.br/minuta-pec)** | Minuta completa de Proposta de Emenda à Constituição (PEC) alterando os arts. 14 e 37 da CF/88. |
+| **[`/caminhos-legais`](https://viaqui.com.br/caminhos-legais)** | Guia de tramitação: o que o Presidente pode fazer por Decreto vs. o que exige PEC ou Lei Complementar. |
+| **[`/constitucionalidade`](https://viaqui.com.br/constitucionalidade)** | Fundamentação jurídica robusta (ponderação de direitos fundamentais, jurisprudência do STF e tratados da ONU/OEA). |
+| **[`/direita`](https://viaqui.com.br/direita)** | Abordagem para liberais e conservadores: eficiência do Estado, responsabilidade fiscal e coerência moral. |
+| **[`/esquerda`](https://viaqui.com.br/esquerda)** | Abordagem para defensores da justiça social: recursos desviados da corrupção fazem falta em escolas e hospitais. |
+| **[`/centrao`](https://viaqui.com.br/centrao)** | Abordagem matemática para indecisos: *"Não é ideologia, é prestação de contas"*. |
 
 ---
 
