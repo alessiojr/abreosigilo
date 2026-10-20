@@ -387,6 +387,12 @@ a:hover { color: var(--vermelho-alerta); }
 }
 .secao-escura h2 { color: var(--amarelo); }
 .secao-escura p { color: #ccc; }
+/* Cards brancos precisam isolar-se do texto claro da seção escura. */
+.secao-escura .card-info { color: var(--preto); }
+.secao-escura .card-info h3,
+.secao-escura .card-info h4 { color: var(--preto); }
+.secao-escura .card-info p { color: #3e4a5c; }
+.secao-escura .card-info li { color: var(--preto); }
 
 .grid-2 {
   display: grid;
@@ -443,6 +449,49 @@ a:hover { color: var(--vermelho-alerta); }
 .conta-perguntas li::before { counter-increment: perguntas; content: counter(perguntas); width: 25px; height: 25px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 50%; background: #fff3bd; color: #665000; font-weight: 900; font-size: .78rem; }
 .conta-rodape { margin: 0; padding: 12px; background: #f2f5f8; border-radius: var(--radius); color: #3e4a5c; font-size: .84rem; font-weight: 700; line-height: 1.4; }
 
+/* =============== IMPACTO DA PROPOSTA =============== */
+.impacto-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 244px;
+  padding: 28px;
+  border-radius: var(--radius-grande);
+  background: var(--branco);
+  color: var(--preto);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .2);
+  border-top: 6px solid var(--amarelo);
+}
+.impacto-card::after {
+  content: '';
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  right: -44px;
+  bottom: -54px;
+  border-radius: 50%;
+  background: rgba(0, 39, 118, .06);
+}
+.impacto-estado { border-top-color: var(--verde); }
+.impacto-pais { border-top-color: var(--vermelho-alerta); }
+.impacto-icone {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: var(--amarelo);
+  color: var(--azul);
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.impacto-estado .impacto-icone { background: var(--verde); color: var(--branco); }
+.impacto-pais .impacto-icone { background: var(--vermelho-alerta); color: var(--branco); }
+.impacto-etiqueta { display: block; margin-bottom: 4px; color: var(--cinza-medio); font-size: .7rem; font-weight: 900; letter-spacing: .08em; }
+.impacto-card h3 { position: relative; z-index: 1; margin-bottom: 10px; font-size: 1.65rem; }
+.impacto-card p { position: relative; z-index: 1; margin: 0; color: #3e4a5c; font-size: 1rem; line-height: 1.5; }
+
 .card-info {
   background: var(--branco);
   border-radius: var(--radius-grande);
@@ -466,6 +515,19 @@ a:hover { color: var(--vermelho-alerta); }
   font-size: 1.2rem;
   font-family: var(--font-titulos);
   margin-bottom: 12px;
+}
+
+.perfil-ficticio {
+  display: block;
+  width: fit-content;
+  margin-top: 3px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  background: #e7ecf4;
+  color: #526176;
+  font-size: .62rem;
+  font-weight: 900;
+  letter-spacing: .06em;
 }
 
 /* =============== GERADOR DE CARD =============== */
@@ -590,7 +652,7 @@ a:hover { color: var(--vermelho-alerta); }
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
-.landing-nav-inner { display: flex; gap: 6px; padding-top: 10px; padding-bottom: 10px; }
+.landing-nav-inner { display: flex; align-items: center; gap: 6px; padding-top: 10px; padding-bottom: 10px; }
 .landing-nav a {
   flex-shrink: 0;
   padding: 8px 16px;
@@ -609,6 +671,24 @@ a:hover { color: var(--vermelho-alerta); }
   color: var(--amarelo);
   border-color: var(--preto);
 }
+.nav-grupo { position: relative; flex-shrink: 0; }
+.nav-grupo summary {
+  list-style: none;
+  padding: 8px 16px;
+  border: 2px solid #ddd;
+  border-radius: 999px;
+  background: var(--branco);
+  color: var(--preto);
+  cursor: pointer;
+  font-size: .85rem;
+  font-weight: 700;
+}
+.nav-grupo summary::-webkit-details-marker { display: none; }
+.nav-grupo summary::after { content: ' +'; }
+.nav-grupo[open] summary::after { content: ' -'; }
+.nav-grupo summary.atual { background: var(--preto); border-color: var(--preto); color: var(--amarelo); }
+.nav-submenu { position: absolute; z-index: 110; top: calc(100% + 8px); right: 0; min-width: 190px; padding: 8px; border: 1px solid #d5dce8; border-radius: var(--radius); background: var(--branco); box-shadow: var(--sombra); }
+.landing-nav .nav-submenu a { display: block; margin: 3px 0; border: 0; border-radius: 5px; padding: 9px 10px; }
 
 /* =============== RESPONSIVO =============== */
 @media (max-width: 768px) {

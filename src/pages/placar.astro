@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import deputies from '../data/deputies.json';
+import demoDeputies from '../data/deputies.json';
 
+// O placar publico inicia vazio e so recebe registros com fonte e data verificaveis.
+const deputies = [] as typeof demoDeputies;
 const total = deputies.length;
 const favoraveis = deputies.filter(d => d.status === 'yes').length;
 const contrarios = deputies.filter(d => d.status === 'no').length;
@@ -9,6 +11,7 @@ const indecisos = deputies.filter(d => d.status === 'undecided').length;
 const totalCasa = 513;
 const meta = 308;
 const percentual = Math.round((favoraveis / totalCasa) * 100);
+const base = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
 ---
 
 <BaseLayout
@@ -31,7 +34,7 @@ const percentual = Math.round((favoraveis / totalCasa) * 100);
 
   <!-- RESUMO DOS NÚMEROS -->
   <section class="container" style="margin-top: -30px; position: relative; z-index: 2;">
-    <p style="background: #fff3cd; border: 1px solid #d4a800; border-radius: var(--radius); padding: 12px; margin-bottom: 16px; font-size: .9rem;">Os nomes e status abaixo são dados fictícios de interface. Não representam posicionamento de pessoas reais.</p>
+    <p style="background: #fff3cd; border: 1px solid #d4a800; border-radius: var(--radius); padding: 12px; margin-bottom: 16px; font-size: .9rem;"><strong>Placar em preparação:</strong> iniciaremos em zero. Um nome só será incluído depois de resposta pública ou documento verificável, com fonte, data e canal de correção.</p>
     <div class="grid-3" style="margin-bottom: 20px;">
       <div style="background: #d4edda; border: 2px solid var(--verde); border-radius: var(--radius-grande); padding: 20px; text-align: center;">
         <div style="font-size: 2.5rem; font-weight: 900; color: var(--verde); font-family: var(--font-titulos);">{favoraveis}</div>
@@ -72,7 +75,7 @@ const percentual = Math.round((favoraveis / totalCasa) * 100);
 
   <!-- TABELA DE DEPUTADOS -->
   <section class="container" style="margin-bottom: 40px;">
-      <h2 style="margin-bottom: 16px;">Exemplo de Placar</h2>
+      <h2 style="margin-bottom: 16px;">Placar em construção</h2>
 
     <div class="filtros" id="filtros-placar">
       <select id="filtro-uf">
@@ -113,24 +116,29 @@ const percentual = Math.round((favoraveis / totalCasa) * 100);
           </tr>
         </thead>
         <tbody>
-          {deputies.map(dep => (
+          {deputies.length === 0 ? (
+            <tr><td colspan="5" style="padding: 32px; text-align: center; color: var(--cinza-medio);">Ainda não há registros publicados. Acompanhe a metodologia e volte quando houver respostas verificadas.</td></tr>
+          ) : deputies.map(dep => (
             <tr data-uf={dep.state} data-status={dep.status}>
-              <td><strong>{dep.name}</strong></td>
+              <td>
+                <strong>{dep.name}</strong>
+                <span class="perfil-ficticio">PERFIL FICTÍCIO</span>
+              </td>
               <td style="color: var(--azul); font-weight: 700;">{dep.party}</td>
               <td style="color: var(--cinza-medio);">{dep.state}</td>
               <td>
-                {dep.status === 'yes' && <span class="tag tag-sim">Contas Abertas</span>}
-                {dep.status === 'undecided' && <span class="tag tag-indeciso">Indeciso</span>}
-                {dep.status === 'no' && <span class="tag tag-nao">Se Recusou</span>}
+                {dep.status === 'yes' && <span class="tag tag-sim">Apoio registrado</span>}
+                {dep.status === 'undecided' && <span class="tag tag-indeciso">Sem resposta</span>}
+                {dep.status === 'no' && <span class="tag tag-nao">Posição contrária</span>}
               </td>
               <td>
                 {dep.status !== 'yes' && (
-                  <a href={`https://wa.me/${dep.phone}?text=${encodeURIComponent(`Prezado(a) ${dep.name}, como eleitor(a), exijo seu apoio à PEC da Transparência Patrimonial. Quem pede voto tem obrigação de mostrar as contas. #AbraOSigilo`)}`} target="_blank" rel="noopener" class="btn btn-vermelho" style="font-size: 0.75rem; padding: 6px 12px;">
-                    📱 Pressionar
+                  <a href={`${base}/compartilhe#criar-card`} class="btn btn-vermelho" style="font-size: 0.75rem; padding: 6px 12px;">
+                    ✍️ Criar mensagem
                   </a>
                 )}
                 {dep.status === 'yes' && (
-                  <span style="color: var(--verde); font-weight: 700; font-size: 0.85rem;">✅ Transparente</span>
+                  <span style="color: var(--verde); font-weight: 700; font-size: 0.85rem;">✓ Exemplo de apoio</span>
                 )}
               </td>
             </tr>

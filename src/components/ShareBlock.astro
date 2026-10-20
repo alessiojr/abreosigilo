@@ -1,80 +1,47 @@
 ---
-// Componente: Bloco de compartilhamento viral
 export interface Props {
   texto: string;
-  urlDaPagina: string;
+  urlDaPagina?: string;
   mostrarGerador?: boolean;
   mostrarCorrente?: boolean;
 }
 
-const { texto, urlDaPagina, mostrarGerador, mostrarCorrente } = Astro.props;
-const encodedTexto = encodeURIComponent(texto);
-const encodedUrl = encodeURIComponent(urlDaPagina || 'https://abrasigilo.com.br');
-
-// Corrente de WhatsApp pré-formatada
-const correnteWhatsApp = encodeURIComponent(
-  `📢 Quem pede seu voto deve prestar contas.
-
-O #AbraOSigilo defende compromisso público com transparência, fiscalização independente e proteção de dados.
-
-📄 Conheça a proposta e a análise constitucional: ${urlDaPagina}
-
-👉 Compartilhe com quem quer regras claras para todos.`
-);
+const { texto, urlDaPagina = '/', mostrarGerador, mostrarCorrente } = Astro.props;
 ---
 
-<div class="secao" style="padding: 40px 0;">
+<div class="secao" style="padding: 40px 0;" data-share-block data-share-path={urlDaPagina} data-share-text={texto}>
   <div class="container">
-    <h3 style="text-align: center; margin-bottom: 8px;">📢 Compartilhe a proposta</h3>
+    <h3 style="text-align: center; margin-bottom: 8px;">Compartilhe a proposta</h3>
     <p style="text-align: center; color: var(--cinza-medio); margin-bottom: 20px;">Uma mensagem clara chega mais longe e convida mais gente para o debate.</p>
 
     <div class="compartilhe-bar">
-      <a href={`https://wa.me/?text=${correnteWhatsApp}`} target="_blank" rel="noopener" class="share-whats">
-        📱 WhatsApp
-      </a>
-      <a href={`https://twitter.com/intent/tweet?text=${encodedTexto}&url=${encodedUrl}&hashtags=AbraOSigilo,TransparenciaJa`} target="_blank" rel="noopener" class="share-twitter">
-        𝕏 Twitter / X
-      </a>
-      <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedTexto}`} target="_blank" rel="noopener" class="share-facebook">
-        📘 Facebook
-      </a>
-      <a href="#" class="share-copy btn-copy" data-copy={texto} role="button">
-        📋 Copiar texto
-      </a>
+      <a href="#" data-share-action="whatsapp" target="_blank" rel="noopener" class="share-whats">WhatsApp</a>
+      <a href="#" data-share-action="twitter" target="_blank" rel="noopener" class="share-twitter">X / Twitter</a>
+      <a href="#" data-share-action="facebook" target="_blank" rel="noopener" class="share-facebook">Facebook</a>
+      <a href="#" class="share-copy btn-copy" data-copy={texto} role="button">Copiar texto</a>
     </div>
 
     {mostrarCorrente && (
       <div style="background: var(--branco); border: 2px dashed var(--vermelho-alerta); border-radius: var(--radius-grande); padding: 20px; margin-top: 20px; max-width: 500px; margin-left: auto; margin-right: auto;">
-        <p style="font-weight: 800; font-size: 0.9rem; text-transform: uppercase; color: var(--vermelho-alerta); margin-bottom: 8px;">📋 Corrente de WhatsApp pronta:</p>
-        <p style="font-size: 0.85rem; white-space: pre-line; background: var(--cinza-claro); padding: 12px; border-radius: var(--radius);">
-          📢 Quem pede seu voto deve prestar contas.
+        <p style="font-weight: 800; font-size: 0.9rem; text-transform: uppercase; color: var(--vermelho-alerta); margin-bottom: 8px;">Mensagem pronta para WhatsApp:</p>
+        <p style="font-size: 0.85rem; white-space: pre-line; background: var(--cinza-claro); padding: 12px; border-radius: var(--radius);">Quem pede seu voto deve prestar contas.
 
-          O #AbraOSigilo defende compromisso público com transparência, fiscalização independente e proteção de dados.
+O #AbraOSigilo defende compromisso público com transparência, fiscalização independente e proteção de dados.
 
-          📄 Conheça a proposta e a análise constitucional: {urlDaPagina}
-
-          👉 Compartilhe com quem quer regras claras para todos.
-        </p>
+Conheça a proposta: {urlDaPagina}</p>
       </div>
     )}
 
     {mostrarGerador && (
       <div style="background: var(--branco); border-radius: var(--radius-grande); padding: 24px; margin-top: 20px; box-shadow: var(--sombra);">
-        <p style="font-weight: 800; margin-bottom: 8px;">🎯 Desafie seu político no Twitter:</p>
-        <p style="font-size: 0.9rem; color: var(--cinza-medio); margin-bottom: 12px;">Cole o @ do político e gere um tweet automático de cobrança.</p>
-
+        <p style="font-weight: 800; margin-bottom: 8px;">Pergunte ao seu representante no X:</p>
+        <p style="font-size: 0.9rem; color: var(--cinza-medio); margin-bottom: 12px;">Informe o @ e gere uma pergunta respeitosa sobre a proposta.</p>
         <div style="display: flex; gap: 8px; margin-bottom: 12px;">
-          <input type="text" id="gerador-arroba" placeholder="@NomeDoPolitico" style="flex: 1; padding: 10px 16px; border: 2px solid #ccc; border-radius: var(--radius); font-size: 1rem; font-family: var(--font-corpo);">
-          <button type="button" id="btn-gerar-tweet" class="btn btn-azul" style="font-size: 0.9rem; padding: 8px 16px;">
-            Gerar Tweet
-          </button>
+          <input type="text" data-share-handle placeholder="@NomeDoPolitico" style="flex: 1; padding: 10px 16px; border: 2px solid #ccc; border-radius: var(--radius); font-size: 1rem; font-family: var(--font-corpo);">
+          <button type="button" data-share-generate class="btn btn-azul" style="font-size: 0.9rem; padding: 8px 16px;">Gerar</button>
         </div>
-
-        <div id="preview-tweet" style="background: var(--cinza-claro); padding: 14px; border-radius: var(--radius); font-size: 0.9rem; min-height: 60px; display: none; margin-bottom: 12px;"></div>
-
-        <a href="#" id="link-tweet" target="_blank" rel="noopener" class="btn btn-azul" style="display: none; font-size: 0.9rem;">
-          🐦 Postar no Twitter/X
-        </a>
+        <div data-share-preview style="background: var(--cinza-claro); padding: 14px; border-radius: var(--radius); font-size: 0.9rem; min-height: 60px; display: none; margin-bottom: 12px;"></div>
+        <a href="#" data-share-post target="_blank" rel="noopener" class="btn btn-azul" style="display: none; font-size: 0.9rem;">Postar no X</a>
       </div>
     )}
   </div>
@@ -82,34 +49,38 @@ O #AbraOSigilo defende compromisso público com transparência, fiscalização i
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Botão copiar texto
-    document.querySelectorAll('.btn-copy').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const text = btn.getAttribute('data-copy') || '';
-        navigator.clipboard.writeText(text).then(() => {
-          btn.textContent = '✓ Copiado!';
-          setTimeout(() => { btn.textContent = '📋 Copiar texto'; }, 2000);
-        });
+    document.querySelectorAll<HTMLElement>('[data-share-block]').forEach(block => {
+      const path = block.dataset.sharePath || '/';
+      const text = block.dataset.shareText || '';
+      const url = new URL(path, window.location.origin).href;
+      const whatsappText = `Quem pede seu voto deve prestar contas.\n\n${text}\n\nConheça a proposta: ${url}`;
+      const whatsapp = block.querySelector<HTMLAnchorElement>('[data-share-action="whatsapp"]');
+      const twitter = block.querySelector<HTMLAnchorElement>('[data-share-action="twitter"]');
+      const facebook = block.querySelector<HTMLAnchorElement>('[data-share-action="facebook"]');
+      if (whatsapp) whatsapp.href = `https://wa.me/?text=${encodeURIComponent(whatsappText)}`;
+      if (twitter) twitter.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&hashtags=AbraOSigilo,TransparenciaJa`;
+      if (facebook) facebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`;
+
+      const input = block.querySelector<HTMLInputElement>('[data-share-handle]');
+      const generate = block.querySelector<HTMLButtonElement>('[data-share-generate]');
+      const preview = block.querySelector<HTMLElement>('[data-share-preview]');
+      const post = block.querySelector<HTMLAnchorElement>('[data-share-post]');
+      generate?.addEventListener('click', () => {
+        const handle = input?.value.trim() || '@SeuRepresentante';
+        const question = `Olá ${handle}, qual é sua posição sobre transparência patrimonial verificável, proteção de dados e fiscalização independente? #AbraOSigilo ${url}`;
+        if (preview) { preview.textContent = question; preview.style.display = 'block'; }
+        if (post) { post.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(question)}`; post.style.display = 'inline-flex'; }
       });
     });
 
-    // Gerador de tweet
-    const arrobaInput = document.getElementById('gerador-arroba') as HTMLInputElement | null;
-    const btnGerar = document.getElementById('btn-gerar-tweet');
-    const preview = document.getElementById('preview-tweet');
-    const linkTweet = document.getElementById('link-tweet') as HTMLAnchorElement | null;
-    const baseTexto = "{texto}";
-
-    if (btnGerar && preview && linkTweet && arrobaInput) {
-      btnGerar.addEventListener('click', () => {
-        const arroba = arrobaInput.value.trim() || '@SeuCandidato';
-        const tweetTexto = `Ei ${arroba}, sou eleitor(a) e gostaria de saber sua posição sobre transparência patrimonial verificável, com proteção de dados e fiscalização independente. Você apoia? #AbraOSigilo ${urlDaPagina}`;
-        preview.textContent = tweetTexto;
-        preview.style.display = 'block';
-        linkTweet.style.display = 'inline-flex';
-        linkTweet.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetTexto)}&hashtags=AbraOSigilo,TransparenciaJa`;
+    document.querySelectorAll<HTMLElement>('.btn-copy').forEach(button => {
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        navigator.clipboard.writeText(button.dataset.copy || '').then(() => {
+          button.textContent = 'Copiado!';
+          setTimeout(() => { button.textContent = 'Copiar texto'; }, 2000);
+        });
       });
-    }
+    });
   });
 </script>

@@ -69,17 +69,23 @@ const base = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
     <div class="container">
       <h2 style="text-align: center;">O que muda na sua vida?</h2>
       <div class="grid-3" style="margin-top: 28px;">
-        <article class="card-info">
+        <article class="impacto-card impacto-cidade">
+          <span class="impacto-icone" aria-hidden="true">⌂</span>
+          <span class="impacto-etiqueta">PERTO DE VOCÊ</span>
           <h3>Na cidade</h3>
-          <p>Mais condições para acompanhar quem decide sobre escola, saúde, transporte e obras perto da sua casa.</p>
+          <p>Acompanhar melhor decisões sobre escola, saúde, transporte e obras do seu bairro.</p>
         </article>
-        <article class="card-info">
+        <article class="impacto-card impacto-estado">
+          <span class="impacto-icone" aria-hidden="true">⌁</span>
+          <span class="impacto-etiqueta">SERVIÇOS REGIONAIS</span>
           <h3>No estado</h3>
-          <p>Mais rastreabilidade sobre quem administra grandes contratos, emendas e serviços regionais.</p>
+          <p>Mais clareza sobre contratos, emendas e serviços que atendem a sua região.</p>
         </article>
-        <article class="card-info">
+        <article class="impacto-card impacto-pais">
+          <span class="impacto-icone" aria-hidden="true">◉</span>
+          <span class="impacto-etiqueta">REGRA PARA TODOS</span>
           <h3>No país</h3>
-          <p>Um padrão nacional para candidatos e titulares de mandato, com regras iguais e fiscalização responsável.</p>
+          <p>Um padrão nacional para candidatos e mandatos, com controle responsável.</p>
         </article>
       </div>
       <div class="hero-actions" style="justify-content: center; margin-top: 32px;">
@@ -91,7 +97,7 @@ const base = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
 
   <ShareBlock
     texto="Quem pede seu voto deve assumir compromisso público com transparência, fiscalização e proteção de dados. Conheça a proposta #AbraOSigilo"
-    urlDaPagina="https://abrasigilo.com.br"
+    urlDaPagina={`${base}/`}
     mostrarCorrente={true}
   />
 </BaseLayout>

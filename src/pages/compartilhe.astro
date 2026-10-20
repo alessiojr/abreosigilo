@@ -43,12 +43,12 @@ const base = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
 
             O #AbraOSigilo defende compromisso público com transparência, fiscalização independente e proteção de dados.
 
-            📄 Conheça a proposta e a análise constitucional: https://abrasigilo.com.br
+            📄 Conheça a proposta e a análise constitucional: <span data-current-url></span>
 
             👉 Compartilhe com quem quer regras claras para todos.
           </div>
 
-          <a href="https://wa.me/?text=%F0%9F%9A%A8%20Voc%C3%AA%20votaria%20num%20pol%C3%ADtico%20que%20esconde%20dinheiro%3F%20%F0%9F%9A%A8%0A%0AA%20lei%20protege%20o%20sigilo%20DELES%2C%20mas%20o%20NOSSO%20VOTO%20pode%20obrig%C3%A1-los%20a%20mostrar%20a%20verdade!%0A%0A%F0%9F%93%8A%20Entre%20no%20movimento%20%23AbraOSigilo%20e%20veja%20quem%20j%C3%A1%20abriu%20e%20quem%20est%C3%A1%20fugindo%3A%20https%3A%2F%2Fabrasigilo.com.br%0A%0A%F0%9F%91%89%20Repasse%20para%205%20amigos%20que%20est%C3%A3o%20cansados%20de%20corrup%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn btn-whatsapp" style="display: block; text-align: center;">
+          <a href="#" id="share-whatsapp-main" target="_blank" rel="noopener" class="btn btn-whatsapp" style="display: block; text-align: center;">
             📱 DISPARAR NO WHATSAPP
           </a>
         </div>
@@ -96,13 +96,13 @@ const base = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
           <p style="font-size: 0.95rem; color: var(--cinza-medio);">Escolha a rede e dispare. Quanto mais gente souber, mais pressão a gente faz.</p>
 
           <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px;">
-            <a href="https://wa.me/?text=%F0%9F%9A%A8%20Voc%C3%AA%20votaria%20num%20pol%C3%ADtico%20que%20esconde%20dinheiro%3F%20%F0%9F%9A%A8%0A%0AN%C3%A3o%20importa%20o%20partido.%20Pol%C3%ADtico%20honesto%20mostra%20as%20contas.%0A%0A%F0%9F%93%8A%20Veja%20quem%20j%C3%A1%20abriu%20o%20sigilo%3A%20https%3A%2F%2Fabrasigilo.com.br%20%23AbraOSigilo" target="_blank" rel="noopener" class="btn btn-whatsapp" style="display: block; text-align: center; font-size: 0.9rem; padding: 12px;">
+            <a href="#" id="share-whatsapp-fast" target="_blank" rel="noopener" class="btn btn-whatsapp" style="display: block; text-align: center; font-size: 0.9rem; padding: 12px;">
               📱 WhatsApp
             </a>
-            <a href="https://twitter.com/intent/tweet?text=N%C3%A3o%20importa%20o%20partido.%20Pol%C3%ADtico%20honesto%20mostra%20as%20contas.%20Se%20voc%C3%AA%20n%C3%A3o%20tem%20nada%20a%20esconder%2C%20por%20que%20seu%20pol%C3%ADtico%20tem%3F%20%23AbraOSigilo&url=https%3A%2F%2Fabrasigilo.com.br" target="_blank" rel="noopener" class="btn btn-azul" style="display: block; text-align: center; font-size: 0.9rem; padding: 12px; background: #000; color: #fff;">
+            <a href="#" id="share-x-fast" target="_blank" rel="noopener" class="btn btn-azul" style="display: block; text-align: center; font-size: 0.9rem; padding: 12px; background: #000; color: #fff;">
               𝕏 Twitter / X
             </a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fabrasigilo.com.br&quote=N%C3%A3o%20importa%20o%20partido.%20Pol%C3%ADtico%20honesto%20mostra%20as%20contas.%20%23AbraOSigilo" target="_blank" rel="noopener" class="btn btn-azul" style="display: block; text-align: center; font-size: 0.9rem; padding: 12px; background: #1877F2; color: #fff;">
+            <a href="#" id="share-facebook-fast" target="_blank" rel="noopener" class="btn btn-azul" style="display: block; text-align: center; font-size: 0.9rem; padding: 12px; background: #1877F2; color: #fff;">
               📘 Facebook
             </a>
           </div>
@@ -111,7 +111,7 @@ const base = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
     </div>
   </section>
 
-  <section class="secao" style="background: #e8edf7;">
+  <section id="criar-card" class="secao" style="background: #e8edf7;">
     <div class="container">
       <div class="gerador-card-header">
         <div>
@@ -182,7 +182,7 @@ const base = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
 
   <ShareBlock
            texto="Não importa o partido: quem pede seu voto deve assumir compromisso público com transparência e fiscalização. #AbraOSigilo"
-    urlDaPagina="https://abrasigilo.com.br/compartilhe"
+    urlDaPagina={`${base}/compartilhe`}
     mostrarGerador={true}
   />
 
@@ -190,7 +190,16 @@ const base = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const urlDaPagina = 'https://abrasigilo.com.br';
+    const urlDaPagina = window.location.href;
+    const textoCompartilhar = 'Quem pede seu voto deve prestar contas. Conheça a proposta #AbraOSigilo';
+    document.querySelectorAll<HTMLElement>('[data-current-url]').forEach(item => { item.textContent = urlDaPagina; });
+    const whatsappHref = `https://wa.me/?text=${encodeURIComponent(`${textoCompartilhar}\n\n${urlDaPagina}`)}`;
+    const xHref = `https://twitter.com/intent/tweet?text=${encodeURIComponent(textoCompartilhar)}&url=${encodeURIComponent(urlDaPagina)}&hashtags=AbraOSigilo`;
+    const facebookHref = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlDaPagina)}&quote=${encodeURIComponent(textoCompartilhar)}`;
+    (document.getElementById('share-whatsapp-main') as HTMLAnchorElement | null)?.setAttribute('href', whatsappHref);
+    (document.getElementById('share-whatsapp-fast') as HTMLAnchorElement | null)?.setAttribute('href', whatsappHref);
+    (document.getElementById('share-x-fast') as HTMLAnchorElement | null)?.setAttribute('href', xHref);
+    (document.getElementById('share-facebook-fast') as HTMLAnchorElement | null)?.setAttribute('href', facebookHref);
 
     // Gerador de tweet 2
     const arrobaInput2 = document.getElementById('gerador-arroba2') as HTMLInputElement | null;
