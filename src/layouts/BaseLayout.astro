@@ -9,18 +9,19 @@ export interface Props {
 
 const { title, description, page } = Astro.props;
 const currentYear = new Date().getFullYear();
+const base = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
 
 const navItems = [
-  { href: '/', label: 'Início', page: 'home' as const },
-  { href: '/esquerda', label: 'Social', page: 'esquerda' as const },
-  { href: '/direita', label: 'Anticorrupção', page: 'direita' as const },
-  { href: '/centrao', label: 'Indecisos', page: 'centrao' as const },
-  { href: '/compartilhe', label: 'Compartilhe', page: 'compartilhe' as const },
-  { href: '/placar', label: 'Placar', page: 'placar' as const },
-  { href: '/proposta', label: 'A proposta', page: 'proposta' as const },
-  { href: '/minuta-pec', label: 'Minuta PEC', page: 'minuta-pec' as const },
-  { href: '/caminhos-legais', label: 'Caminhos legais', page: 'caminhos-legais' as const },
-  { href: '/constitucionalidade', label: 'Base legal', page: 'constitucionalidade' as const },
+  { href: `${base}/`, label: 'Início', page: 'home' as const },
+  { href: `${base}/esquerda`, label: 'Social', page: 'esquerda' as const },
+  { href: `${base}/direita`, label: 'Anticorrupção', page: 'direita' as const },
+  { href: `${base}/centrao`, label: 'Indecisos', page: 'centrao' as const },
+  { href: `${base}/compartilhe`, label: 'Compartilhe', page: 'compartilhe' as const },
+  { href: `${base}/placar`, label: 'Placar', page: 'placar' as const },
+  { href: `${base}/proposta`, label: 'A proposta', page: 'proposta' as const },
+  { href: `${base}/minuta-pec`, label: 'Minuta PEC', page: 'minuta-pec' as const },
+  { href: `${base}/caminhos-legais`, label: 'Caminhos legais', page: 'caminhos-legais' as const },
+  { href: `${base}/constitucionalidade`, label: 'Base legal', page: 'constitucionalidade' as const },
 ];
 ---
 
@@ -32,6 +33,7 @@ const navItems = [
   <title>{title} | #AbraOSigilo</title>
   <meta name="description" content={description}>
   <meta name="robots" content="index,follow">
+  <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`}>
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="#AbraOSigilo">
@@ -54,7 +56,7 @@ const navItems = [
 <body>
   <header class="header-site">
     <div class="container header-inner">
-      <a href="/" class="header-logo">
+      <a href={base ? `${base}/` : '/'} class="header-logo">
         <span class="icone">!</span>
         <span>#AbraOSigilo</span>
       </a>

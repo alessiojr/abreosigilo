@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroComparison from '../components/HeroComparison.astro';
 import ShareBlock from '../components/ShareBlock.astro';
 import QuoteCard from '../components/QuoteCard.astro';
+
+const base = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
 ---
 
 <BaseLayout
@@ -24,7 +26,7 @@ import QuoteCard from '../components/QuoteCard.astro';
          <strong style="color: var(--amarelo);">Transparência com proteção de dados é justiça social.</strong>
       </p>
       <div style="margin-top: 28px;">
-        <a href="/compartilhe" class="btn btn-amarelo btn-lg">✊ PRESSIONE SEU CANDIDATO</a>
+        <a href={`${base}/compartilhe`} class="btn btn-amarelo btn-lg">✊ PRESSIONE SEU CANDIDATO</a>
       </div>
     </div>
   </section>
@@ -103,7 +105,7 @@ import QuoteCard from '../components/QuoteCard.astro';
         A única ferramenta que o povo tem é o voto. E o voto informado.
         Se o político não mostra o IR, ele não merece seu voto. Simples.
       </p>
-      <a href="/compartilhe" class="btn btn-vermelho btn-lg">📢 ESPALHE ESSA MENSAGEM</a>
+      <a href={`${base}/compartilhe`} class="btn btn-vermelho btn-lg">📢 ESPALHE ESSA MENSAGEM</a>
     </div>
   </section>
 

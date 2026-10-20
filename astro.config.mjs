@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://sigilozero.com.br',
+  site: 'https://alessiojr.github.io',
+  base: '/abreosigilo',
   output: 'static',
   compressHTML: true,
   devToolbar: {
