@@ -44,28 +44,39 @@ const base = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
     <div class="container">
       <h2 style="text-align: center; margin-bottom: 24px; color: var(--amarelo);">Vamos fazer uma conta simples.</h2>
 
-      <div class="grid-2">
-        <div style="background: var(--branco); border-radius: var(--radius-grande); padding: 28px;">
-          <h3 style="font-size: 1.2rem; margin-bottom: 16px;">🧮 O que um deputado federal ganha:</h3>
-          <ul style="list-style: none; padding: 0;">
-            <li style="padding: 8px 0; border-bottom: 1px solid #eee;">Salário bruto: <strong>R$ 39.293,00/mês</strong></li>
-            <li style="padding: 8px 0; border-bottom: 1px solid #eee;">Auxílio-moradia: <strong>R$ 4.253,00/mês</strong></li>
-            <li style="padding: 8px 0; border-bottom: 1px solid #eee;">Verba de gabinete: <strong>Até R$ 111.675,00/mês</strong></li>
-            <li style="padding: 8px 0; border-bottom: 1px solid #eee;">Cota parlamentar: <strong>R$ 30.000 a R$ 45.000/mês</strong></li>
-            <li style="padding: 8px 0; border-bottom: 1px solid #eee;">Auxílio-saúde: <strong>Reembolso ilimitado</strong></li>
-            <li style="padding: 8px 0;">Total 4 anos: <strong>Aprox. R$ 11 milhões</strong></li>
+      <div class="conta-grid">
+        <div class="conta-card conta-card-dados">
+          <div class="conta-card-topo">
+            <span class="conta-icone" aria-hidden="true">R$</span>
+            <div>
+              <span class="conta-etiqueta">SEPARAR PARA ENTENDER</span>
+              <h3>Salário não é verba pública</h3>
+            </div>
+          </div>
+          <p class="conta-intro">Antes de perguntar sobre patrimônio, é preciso diferenciar o dinheiro recebido pela pessoa dos recursos usados pelo mandato.</p>
+          <ul class="conta-lista">
+            <li><span class="conta-marcador verde">1</span><span><strong>Subsídio:</strong> remuneração pessoal do parlamentar.</span></li>
+            <li><span class="conta-marcador azul">2</span><span><strong>Verba de gabinete:</strong> recurso para equipe e funcionamento do gabinete, com regras e fiscalização.</span></li>
+            <li><span class="conta-marcador amarelo">3</span><span><strong>Cota parlamentar:</strong> reembolso de despesas vinculadas ao mandato, dentro das normas aplicáveis.</span></li>
           </ul>
+          <p class="conta-rodape">Não é correto somar essas verbas como se fossem patrimônio pessoal.</p>
         </div>
 
-        <div style="background: var(--branco); border-radius: var(--radius-grande); padding: 28px;">
-          <h3 style="font-size: 1.2rem; margin-bottom: 16px;">❓ Perguntas que qualquer eleitor pode fazer:</h3>
-          <ul style="list-style: none; padding: 0;">
-            <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: var(--vermelho-alerta); font-weight: 600;">Se ele entrou no mandato com 1 apartamento e saiu com 5, de onde veio o dinheiro?</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: var(--vermelho-alerta); font-weight: 600;">Se o patrimônio cresceu 300% em 4 anos, o salário explica?</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: var(--vermelho-alerta); font-weight: 600;">Por que ele declara bens ao TSE por "custo histórico" em vez de valor real?</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: var(--vermelho-alerta); font-weight: 600;">Se a empresa dele ganhou licitação do governo, isso é conflito de interesse?</li>
-             <li style="padding: 8px 0; color: var(--vermelho-alerta); font-weight: 600;">Que compromisso público de transparência e controle ele aceita assumir?</li>
-          </ul>
+        <div class="conta-card conta-card-perguntas">
+          <div class="conta-card-topo">
+            <span class="conta-icone conta-icone-pergunta" aria-hidden="true">?</span>
+            <div>
+              <span class="conta-etiqueta">QUALQUER ELEITOR PODE FAZER</span>
+              <h3>Perguntas que importam</h3>
+            </div>
+          </div>
+          <ol class="conta-perguntas">
+            <li>A evolução patrimonial declarada tem explicação verificável?</li>
+            <li>Há atividade empresarial ou contrato público que mereça esclarecimento?</li>
+            <li>O candidato explica de onde vêm seus rendimentos além do mandato?</li>
+            <li>Que compromisso público de transparência e controle aceita assumir?</li>
+          </ol>
+          <p class="conta-rodape">Perguntar não é acusar. É acompanhar quem pediu seu voto.</p>
         </div>
       </div>
     </div>

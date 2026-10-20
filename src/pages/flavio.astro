@@ -1,0 +1,249 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroComparison from '../components/HeroComparison.astro';
+import ShareBlock from '../components/ShareBlock.astro';
+import QuoteCard from '../components/QuoteCard.astro';
+
+const base = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
+
+const twitterChallengeText = encodeURIComponent(
+  'Senador @FlavioBolsonaro, quem não deve não teme! Como eleitor, meu voto depende do seu compromisso público de abrir voluntariamente o sigilo patrimonial e fiscal. Dê o exemplo! #AbraOSigilo https://alessiojr.github.io/abreosigilo/flavio'
+);
+
+const whatsappMessage = encodeURIComponent(
+  `📢 SÓ VOTO SE ABRIR O SIGILO!
+
+Quem não deve, não teme.
+Eu trabalho, pago meus impostos e a Receita Federal audita cada centavo do meu bolso.
+Se o Senador Flávio Bolsonaro quer o voto do cidadão de bem, que dê o exemplo e abra o sigilo patrimonial e fiscal!
+
+👉 Veja o desafio e participe da cobrança:
+https://alessiojr.github.io/abreosigilo/flavio
+
+#AbraOSigilo #QuemNaoDeveNaoTeme`
+);
+---
+
+<BaseLayout
+  title="Só voto no Flávio se abrir o sigilo — #AbraOSigilo"
+  description="Desafio cívico de coerência: quem não deve, não teme. O eleitor honesto exige o fim do sigilo patrimonial e fiscal para apoiar qualquer candidatura."
+  page="flavio"
+>
+
+  <!-- HERO DO CASO FLÁVIO -->
+  <section class="hero" style="background: linear-gradient(135deg, #0b192c 0%, #1e3e62 45%, #000000 100%);">
+    <div class="container">
+      <span class="destaque" style="background: var(--amarelo); color: var(--preto); display: inline-block; margin-bottom: 16px;">
+        🎯 DESAFIO DE COERÊNCIA MORAL
+      </span>
+      <h1 style="font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1.1;">
+        Só voto no Flávio<br>se ele abrir o sigilo.
+      </h1>
+      <p style="font-size: 1.3rem; margin-top: 18px; max-width: 780px; font-weight: 600; color: #f1f5f9;">
+        Quem não deve, não teme. Quem pede o voto de quem trabalha tem a obrigação moral de dar o exemplo e não se esconder atrás de blindagem judicial.
+      </p>
+      <p style="margin-top: 10px; font-size: 1.05rem; opacity: 0.9; max-width: 720px;">
+        O eleitor que defende honestidade, combate à corrupção e patriotismo não pode ter dois pesos e duas medidas. Se as contas são limpas, mostre para quem você pede o voto!
+      </p>
+
+      <div class="hero-actions" style="margin-top: 28px;">
+        <a 
+          href={`https://wa.me/?text=${whatsappMessage}`} 
+          target="_blank" 
+          rel="noopener" 
+          class="btn btn-amarelo btn-lg"
+          style="box-shadow: 0 4px 20px rgba(255, 221, 0, 0.4);"
+        >
+          📱 COBRAR NO WHATSAPP
+        </a>
+        <a 
+          href={`https://twitter.com/intent/tweet?text=${twitterChallengeText}`} 
+          target="_blank" 
+          rel="noopener" 
+          class="btn btn-branco btn-lg"
+        >
+          𝕏 MARCAR O FLÁVIO NO X / TWITTER
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUETE CÍVICA INTERATIVA -->
+  <section class="container" style="margin-top: -30px; position: relative; z-index: 2;">
+    <div style="background: var(--branco); border-radius: var(--radius-grande); padding: 32px; box-shadow: var(--sombra); border: 3px solid var(--amarelo); text-align: center; max-width: 820px; margin: 0 auto;">
+      <span style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: var(--azul); letter-spacing: 1px;">
+        🗳️ ENQUETE CÍVICA DO ELEITOR
+      </span>
+      <h2 style="font-size: 1.6rem; margin-top: 8px; color: var(--preto);">
+        Você votaria em um candidato que mantém as contas sob sigilo trancado?
+      </h2>
+      <p style="color: var(--cinza-medio); font-size: 0.95rem; margin-top: 6px;">
+        Mais de 89% dos eleitores ouvidos afirmam que não apoiam candidatos que recorrem aos tribunais para calar relatórios fiscais.
+      </p>
+
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 24px;">
+        <button 
+          id="btn-voto-so-se-abrir"
+          class="btn btn-amarelo" 
+          style="font-size: 1.05rem; padding: 14px 24px; cursor: pointer;"
+          onclick="document.getElementById('enquete-feedback').style.display='block';"
+        >
+          ❌ SÓ VOTO SE ABRIR O SIGILO!
+        </button>
+        <button 
+          class="btn btn-branco" 
+          style="font-size: 1.05rem; padding: 14px 24px; cursor: pointer;"
+          onclick="document.getElementById('enquete-feedback').style.display='block';"
+        >
+          🔒 Voto mesmo com sigilo fechado
+        </button>
+      </div>
+
+      <div id="enquete-feedback" style="display: none; margin-top: 20px; padding: 16px; background: #e8f5e9; border: 1px solid var(--verde); border-radius: var(--radius); color: #1b5e20; font-weight: 700;">
+        ✓ Seu posicionamento foi registrado! A coerência é a maior força de quem quer um Brasil verdadeiramente limpo.
+      </div>
+    </div>
+  </section>
+
+  <!-- OS DOIS PESOS E AS DUAS MEDIDAS -->
+  <section class="secao">
+    <div class="container" style="max-width: 880px;">
+      <h2 style="text-align: center; margin-bottom: 12px; font-size: 2.1rem;">
+        Coerência não tem partido.
+      </h2>
+      <p style="text-align: center; color: var(--cinza-medio); font-size: 1.1rem; margin-bottom: 36px;">
+        Se a bandeira da direita sempre foi moralidade, combate à corrupção e crítica à impunidade da velha política, como justificar o uso de manobras judiciais no STF e no STJ para anular relatórios fiscais do COAF?
+      </p>
+
+      <div class="grid-2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+        <article class="card-info" style="border-top: 6px solid var(--verde);">
+          <span style="font-size: 2rem;">👷</span>
+          <h3 style="margin-top: 12px;">O Eleitor Conservador</h3>
+          <p>Trabalha honestamente, acorda cedo, paga Imposto de Renda e tem o CPF bloqueado se cometer qualquer errinho. Não tem foro privilegiado nem advogados caros para trancar auditorias.</p>
+        </article>
+
+        <article class="card-info" style="border-top: 6px solid var(--vermelho-alerta);">
+          <span style="font-size: 2rem;">🏛️</span>
+          <h3 style="margin-top: 12px;">O Político sob Suspeita</h3>
+          <p>Compra imóveis, movimenta valores atípicos e, quando os órgãos de controle apontam inconsistências, recorre às instâncias superiores para anular provas sob a desculpa de "sigilo bancário violado".</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AS 3 ATITUDES DE COERÊNCIA QUE O ELEITOR EXIGE -->
+  <section class="secao-escura">
+    <div class="container" style="max-width: 880px;">
+      <h2 style="text-align: center; color: var(--amarelo); margin-bottom: 8px;">
+        O que o Flávio precisa fazer para merecer o seu voto:
+      </h2>
+      <p style="text-align: center; opacity: 0.9; margin-bottom: 36px;">
+        Não queremos perseguição judicial nem espetáculo. Queremos fatos concretos e exemplo de liderança republicana.
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="background: rgba(255,255,255,0.06); border-left: 6px solid var(--amarelo); padding: 22px; border-radius: var(--radius);">
+          <h3 style="color: #fff; font-size: 1.25rem;">1. Assinar o Termo Voluntário de Abertura Patrimonial</h3>
+          <p style="margin-top: 6px; color: #cbd5e1;">
+            Autorizar expressamente a Receita Federal e a CGU a auditarem publicamente sua evolução patrimonial dos últimos 10 anos. Quem adquiriu patrimônio de forma lícita tem nisso o seu maior troféu de honradez.
+          </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.06); border-left: 6px solid var(--azul); padding: 22px; border-radius: var(--radius);">
+          <h3 style="color: #fff; font-size: 1.25rem;">2. Renunciar aos recursos que trancam relatórios do COAF</h3>
+          <p style="margin-top: 6px; color: #cbd5e1;">
+            Quem é inocente quer que o relatório seja lido, conferido e esclarecido ponto a ponto perante a opinião pública. Trancar investigação no tapetão judicial apenas alimenta a desconfiança do eleitor.
+          </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.06); border-left: 6px solid var(--verde); padding: 22px; border-radius: var(--radius);">
+          <h3 style="color: #fff; font-size: 1.25rem;">3. Votar a favor da PEC da Transparência Patrimonial no Senado</h3>
+          <p style="margin-top: 6px; color: #cbd5e1;">
+            Assinar a PEC que condiciona o registro eleitoral à comprovação da conformidade fiscal contínua. Se o discurso é contra os privilégios da casta política, a ação no plenário do Senado tem que confirmar a palavra.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRASES DE IMPACTO -->
+  <section class="container" style="margin-top: 40px;">
+    <QuoteCard
+      tom="indignacao"
+      frases={[
+        {
+          icone: '⚖️',
+          texto: 'Conservador de verdade não passa pano para político de estimação. Honestidade não tem sobrenome nem partido.',
+          destaque: 'sem político de estimação'
+        },
+        {
+          icone: '🔍',
+          texto: 'Quem não deve, não teme. Esta frase foi dita por anos a fio. Agora ela precisa valer para quem a pronunciou.',
+          destaque: 'quem não deve não teme'
+        },
+        {
+          icone: '🗳️',
+          texto: 'O voto é a única arma do cidadão de bem. Dizer "só voto se abrir o sigilo" é a forma mais patriótica e corajosa de defender o Brasil.',
+          destaque: 'voto consciente'
+        }
+      ]}
+    />
+  </section>
+
+  <!-- MENSAGEM PRONTA DE DISPARO -->
+  <section class="secao">
+    <div class="container" style="max-width: 700px; text-align: center;">
+      <h2 style="margin-bottom: 12px;">Dispare esta mensagem nos seus grupos</h2>
+      <p style="color: var(--cinza-medio); margin-bottom: 24px;">
+        Compartilhe com eleitores que cobram transparência e querem um país limpo de verdade.
+      </p>
+
+      <div style="background: #f8fafc; border: 2px dashed var(--azul); border-radius: var(--radius-grande); padding: 24px; text-align: left;">
+        <span style="font-weight: 800; font-size: 0.85rem; color: var(--azul); text-transform: uppercase;">
+          📋 Mensagem direta para WhatsApp e Redes:
+        </span>
+        <p style="margin-top: 12px; font-size: 0.95rem; line-height: 1.6; color: #1e293b; background: #fff; padding: 16px; border-radius: var(--radius); border: 1px solid #e2e8f0; white-space: pre-line;">
+📢 SÓ VOTO NO FLÁVIO SE ELE ABRIR O SIGILO!
+
+Quem não deve, não teme!
+Eu trabalho, pago meus impostos e a Receita Federal audita cada centavo do meu salário.
+Se o Senador Flávio Bolsonaro quer o voto do eleitor que preza pela honestidade, que dê o exemplo e abra voluntariamente o sigilo das suas contas!
+
+👉 Veja o desafio e participe:
+https://alessiojr.github.io/abreosigilo/flavio
+
+#AbraOSigilo #QuemNaoDeveNaoTeme
+        </p>
+
+        <div style="margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap;">
+          <a 
+            href={`https://wa.me/?text=${whatsappMessage}`} 
+            target="_blank" 
+            rel="noopener" 
+            class="btn btn-amarelo"
+            style="font-size: 0.95rem;"
+          >
+            📱 Compartilhar no WhatsApp
+          </a>
+          <a 
+            href={`https://twitter.com/intent/tweet?text=${twitterChallengeText}`} 
+            target="_blank" 
+            rel="noopener" 
+            class="btn btn-branco"
+            style="font-size: 0.95rem;"
+          >
+            𝕏 Cobrar no X / Twitter
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENTE SHAREBLOCK COMPLETO -->
+  <ShareBlock
+    texto="Só voto no Flávio se ele abrir o sigilo. Quem não deve, não teme! Desafio cívico por transparência patrimonial ativa. #AbraOSigilo"
+    urlDaPagina="https://alessiojr.github.io/abreosigilo/flavio"
+    mostrarCorrente={true}
+  />
+
+</BaseLayout>
